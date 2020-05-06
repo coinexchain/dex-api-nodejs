@@ -1,6 +1,6 @@
 # DexApiNodejs.AssetApi
 
-All URIs are relative to *https://dex-api.coinex.org/*
+All URIs are relative to *https://dex-api.coinex.org*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,23 +22,25 @@ Method | HTTP request | Description
 [**unForbidAddr**](AssetApi.md#unForbidAddr) | **POST** /asset/tokens/{symbol}/unforbidden/addresses | UnForbid address
 [**unFrobidToken**](AssetApi.md#unFrobidToken) | **POST** /asset/tokens/{symbol}/unforbids | UnForbid token
 
-<a name="addWhitelist"></a>
-# **addWhitelist**
-> StdTx addWhitelist(bodysymbol)
+
+
+## addWhitelist
+
+> StdTx addWhitelist(symbol, whitelist)
 
 Add forbid whitelist
 
 Add forbiddable token whitelist addr
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.AssetApi();
-let body = new DexApiNodejs.Whitelist(); // Whitelist | token whitelist addr
-let symbol = "symbol_example"; // String | token symbol
-
-apiInstance.addWhitelist(bodysymbol).then((data) => {
+let symbol = abc; // String | token symbol
+let whitelist = new DexApiNodejs.Whitelist(); // Whitelist | token whitelist addr
+apiInstance.addWhitelist(symbol, whitelist).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -48,10 +50,11 @@ apiInstance.addWhitelist(bodysymbol).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Whitelist**](Whitelist.md)| token whitelist addr | 
  **symbol** | **String**| token symbol | 
+ **whitelist** | [**Whitelist**](Whitelist.md)| token whitelist addr | 
 
 ### Return type
 
@@ -63,26 +66,27 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="burnToken"></a>
-# **burnToken**
-> StdTx burnToken(bodysymbol)
+
+## burnToken
+
+> StdTx burnToken(symbol, amount)
 
 Burn token
 
 Burn burnable token
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.AssetApi();
-let body = null; // Object | burn token amount
-let symbol = "symbol_example"; // String | token symbol
-
-apiInstance.burnToken(bodysymbol).then((data) => {
+let symbol = abc; // String | token symbol
+let amount = new DexApiNodejs.InlineObject22(); // InlineObject22 | 
+apiInstance.burnToken(symbol, amount).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -92,10 +96,11 @@ apiInstance.burnToken(bodysymbol).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| burn token amount | 
  **symbol** | **String**| token symbol | 
+ **amount** | [**InlineObject22**](InlineObject22.md)|  | 
 
 ### Return type
 
@@ -107,26 +112,27 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="forbidAddr"></a>
-# **forbidAddr**
-> StdTx forbidAddr(bodysymbol)
+
+## forbidAddr
+
+> StdTx forbidAddr(symbol, addresses)
 
 Forbid address
 
 Add forbidden addresses
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.AssetApi();
-let body = new DexApiNodejs.Addresses(); // Addresses | forbidden addresses
-let symbol = "symbol_example"; // String | token symbol
-
-apiInstance.forbidAddr(bodysymbol).then((data) => {
+let symbol = abc; // String | token symbol
+let addresses = new DexApiNodejs.Addresses(); // Addresses | forbidden addresses
+apiInstance.forbidAddr(symbol, addresses).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -136,10 +142,11 @@ apiInstance.forbidAddr(bodysymbol).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Addresses**](Addresses.md)| forbidden addresses | 
  **symbol** | **String**| token symbol | 
+ **addresses** | [**Addresses**](Addresses.md)| forbidden addresses | 
 
 ### Return type
 
@@ -151,26 +158,27 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="forbidToken"></a>
-# **forbidToken**
-> StdTx forbidToken(bodysymbol)
+
+## forbidToken
+
+> StdTx forbidToken(symbol, baseReq)
 
 Forbid token
 
 Forbid forbiddable token
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.AssetApi();
-let body = null; // Object | base req
-let symbol = "symbol_example"; // String | token symbol
-
-apiInstance.forbidToken(bodysymbol).then((data) => {
+let symbol = abc; // String | token symbol
+let baseReq = new DexApiNodejs.InlineObject23(); // InlineObject23 | 
+apiInstance.forbidToken(symbol, baseReq).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -180,10 +188,11 @@ apiInstance.forbidToken(bodysymbol).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| base req | 
  **symbol** | **String**| token symbol | 
+ **baseReq** | [**InlineObject23**](InlineObject23.md)|  | 
 
 ### Return type
 
@@ -195,16 +204,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="getAssetParams"></a>
-# **getAssetParams**
-> Object getAssetParams()
+
+## getAssetParams
+
+> InlineResponse20037 getAssetParams()
 
 Get the current asset parameters
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
@@ -218,11 +229,12 @@ apiInstance.getAssetParams().then((data) => {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-**Object**
+[**InlineResponse20037**](InlineResponse20037.md)
 
 ### Authorization
 
@@ -230,24 +242,25 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getForbiddenAddresses"></a>
-# **getForbiddenAddresses**
-> Object getForbiddenAddresses(symbol)
+
+## getForbiddenAddresses
+
+> InlineResponse20040 getForbiddenAddresses(symbol)
 
 query forbidden addresses
 
 Get forbidden addresses with provided &#x60;symbol&#x60;
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.AssetApi();
-let symbol = "symbol_example"; // String | token symbol
-
+let symbol = abc; // String | token symbol
 apiInstance.getForbiddenAddresses(symbol).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -258,13 +271,14 @@ apiInstance.getForbiddenAddresses(symbol).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| token symbol | 
 
 ### Return type
 
-**Object**
+[**InlineResponse20040**](InlineResponse20040.md)
 
 ### Authorization
 
@@ -272,18 +286,20 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getReservedSymbols"></a>
-# **getReservedSymbols**
-> Object getReservedSymbols()
+
+## getReservedSymbols
+
+> InlineResponse20041 getReservedSymbols()
 
 List reserved symbols
 
 List all reserved symbols
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
@@ -297,11 +313,12 @@ apiInstance.getReservedSymbols().then((data) => {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-**Object**
+[**InlineResponse20041**](InlineResponse20041.md)
 
 ### Authorization
 
@@ -309,24 +326,25 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getToken"></a>
-# **getToken**
-> Object getToken(symbol)
+
+## getToken
+
+> InlineResponse20039 getToken(symbol)
 
 queryToken
 
 Get token with provided &#x60;symbol&#x60;
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.AssetApi();
-let symbol = "symbol_example"; // String | token symbol
-
+let symbol = abc; // String | token symbol
 apiInstance.getToken(symbol).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -337,13 +355,14 @@ apiInstance.getToken(symbol).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| token symbol | 
 
 ### Return type
 
-**Object**
+[**InlineResponse20039**](InlineResponse20039.md)
 
 ### Authorization
 
@@ -351,18 +370,20 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getTokenList"></a>
-# **getTokenList**
-> Object getTokenList()
+
+## getTokenList
+
+> InlineResponse20038 getTokenList()
 
 List tokens
 
 List all existing tokens
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
@@ -376,11 +397,12 @@ apiInstance.getTokenList().then((data) => {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-**Object**
+[**InlineResponse20038**](InlineResponse20038.md)
 
 ### Authorization
 
@@ -388,24 +410,25 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getWhitelist"></a>
-# **getWhitelist**
-> Object getWhitelist(symbol)
+
+## getWhitelist
+
+> InlineResponse20040 getWhitelist(symbol)
 
 queryWhitelist
 
 Get token whitelist with provided &#x60;symbol&#x60;
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.AssetApi();
-let symbol = "symbol_example"; // String | token symbol
-
+let symbol = abc; // String | token symbol
 apiInstance.getWhitelist(symbol).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -416,13 +439,14 @@ apiInstance.getWhitelist(symbol).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| token symbol | 
 
 ### Return type
 
-**Object**
+[**InlineResponse20040**](InlineResponse20040.md)
 
 ### Authorization
 
@@ -430,25 +454,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="issueToken"></a>
-# **issueToken**
-> StdTx issueToken(body)
+
+## issueToken
+
+> StdTx issueToken(tokenInfo)
 
 Issue token
 
 Issue a new Token
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.AssetApi();
-let body = new DexApiNodejs.IssueToken(); // IssueToken | the detail info about the Token to issue
-
-apiInstance.issueToken(body).then((data) => {
+let tokenInfo = new DexApiNodejs.IssueToken(); // IssueToken | the detail info about the Token to issue
+apiInstance.issueToken(tokenInfo).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -458,9 +483,10 @@ apiInstance.issueToken(body).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**IssueToken**](IssueToken.md)| the detail info about the Token to issue | 
+ **tokenInfo** | [**IssueToken**](IssueToken.md)| the detail info about the Token to issue | 
 
 ### Return type
 
@@ -472,26 +498,27 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="mintToken"></a>
-# **mintToken**
-> StdTx mintToken(bodysymbol)
+
+## mintToken
+
+> StdTx mintToken(symbol, amount)
 
 Mint token
 
 Mint mintable token
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.AssetApi();
-let body = null; // Object | mint token amount
-let symbol = "symbol_example"; // String | token symbol
-
-apiInstance.mintToken(bodysymbol).then((data) => {
+let symbol = abc; // String | token symbol
+let amount = new DexApiNodejs.InlineObject21(); // InlineObject21 | 
+apiInstance.mintToken(symbol, amount).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -501,10 +528,11 @@ apiInstance.mintToken(bodysymbol).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| mint token amount | 
  **symbol** | **String**| token symbol | 
+ **amount** | [**InlineObject21**](InlineObject21.md)|  | 
 
 ### Return type
 
@@ -516,26 +544,27 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="modifyTokenInfo"></a>
-# **modifyTokenInfo**
-> StdTx modifyTokenInfo(bodysymbol)
+
+## modifyTokenInfo
+
+> StdTx modifyTokenInfo(symbol, info)
 
 Modify token info
 
 Modify token info
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.AssetApi();
-let body = null; // Object | new token info
-let symbol = "symbol_example"; // String | token symbol
-
-apiInstance.modifyTokenInfo(bodysymbol).then((data) => {
+let symbol = abc; // String | token symbol
+let info = new DexApiNodejs.InlineObject25(); // InlineObject25 | 
+apiInstance.modifyTokenInfo(symbol, info).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -545,10 +574,11 @@ apiInstance.modifyTokenInfo(bodysymbol).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| new token info | 
  **symbol** | **String**| token symbol | 
+ **info** | [**InlineObject25**](InlineObject25.md)|  | 
 
 ### Return type
 
@@ -560,26 +590,27 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="removeWhitelist"></a>
-# **removeWhitelist**
-> StdTx removeWhitelist(bodysymbol)
+
+## removeWhitelist
+
+> StdTx removeWhitelist(symbol, whitelist)
 
 Remove forbid whitelist
 
 Remove forbiddable token whitelist addr
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.AssetApi();
-let body = new DexApiNodejs.Whitelist(); // Whitelist | token whitelist addr
-let symbol = "symbol_example"; // String | token symbol
-
-apiInstance.removeWhitelist(bodysymbol).then((data) => {
+let symbol = abc; // String | token symbol
+let whitelist = new DexApiNodejs.Whitelist(); // Whitelist | token whitelist addr
+apiInstance.removeWhitelist(symbol, whitelist).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -589,10 +620,11 @@ apiInstance.removeWhitelist(bodysymbol).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Whitelist**](Whitelist.md)| token whitelist addr | 
  **symbol** | **String**| token symbol | 
+ **whitelist** | [**Whitelist**](Whitelist.md)| token whitelist addr | 
 
 ### Return type
 
@@ -604,26 +636,27 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="transferOwnership"></a>
-# **transferOwnership**
-> StdTx transferOwnership(bodysymbol)
+
+## transferOwnership
+
+> StdTx transferOwnership(symbol, newOwner)
 
 Transfer ownership
 
 Transfer token owner ship
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.AssetApi();
-let body = null; // Object | transfer ownership to new owner
-let symbol = "symbol_example"; // String | token symbol
-
-apiInstance.transferOwnership(bodysymbol).then((data) => {
+let symbol = abc; // String | token symbol
+let newOwner = new DexApiNodejs.InlineObject20(); // InlineObject20 | 
+apiInstance.transferOwnership(symbol, newOwner).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -633,10 +666,11 @@ apiInstance.transferOwnership(bodysymbol).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| transfer ownership to new owner | 
  **symbol** | **String**| token symbol | 
+ **newOwner** | [**InlineObject20**](InlineObject20.md)|  | 
 
 ### Return type
 
@@ -648,26 +682,27 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="unForbidAddr"></a>
-# **unForbidAddr**
-> StdTx unForbidAddr(bodysymbol)
+
+## unForbidAddr
+
+> StdTx unForbidAddr(symbol, addresses)
 
 UnForbid address
 
 Remove forbidden addresses
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.AssetApi();
-let body = new DexApiNodejs.Addresses(); // Addresses | un forbidden addresses
-let symbol = "symbol_example"; // String | token symbol
-
-apiInstance.unForbidAddr(bodysymbol).then((data) => {
+let symbol = abc; // String | token symbol
+let addresses = new DexApiNodejs.Addresses(); // Addresses | un forbidden addresses
+apiInstance.unForbidAddr(symbol, addresses).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -677,10 +712,11 @@ apiInstance.unForbidAddr(bodysymbol).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Addresses**](Addresses.md)| un forbidden addresses | 
  **symbol** | **String**| token symbol | 
+ **addresses** | [**Addresses**](Addresses.md)| un forbidden addresses | 
 
 ### Return type
 
@@ -692,26 +728,27 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="unFrobidToken"></a>
-# **unFrobidToken**
-> StdTx unFrobidToken(bodysymbol)
+
+## unFrobidToken
+
+> StdTx unFrobidToken(symbol, baseReq)
 
 UnForbid token
 
 UnForbid forbiddable token
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.AssetApi();
-let body = null; // Object | base req
-let symbol = "symbol_example"; // String | token symbol
-
-apiInstance.unFrobidToken(bodysymbol).then((data) => {
+let symbol = abc; // String | token symbol
+let baseReq = new DexApiNodejs.InlineObject24(); // InlineObject24 | 
+apiInstance.unFrobidToken(symbol, baseReq).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -721,10 +758,11 @@ apiInstance.unFrobidToken(bodysymbol).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| base req | 
  **symbol** | **String**| token symbol | 
+ **baseReq** | [**InlineObject24**](InlineObject24.md)|  | 
 
 ### Return type
 
@@ -736,6 +774,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 

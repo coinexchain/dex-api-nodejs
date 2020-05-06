@@ -1,6 +1,6 @@
 # DexApiNodejs.MarketApi
 
-All URIs are relative to *https://dex-api.coinex.org/*
+All URIs are relative to *https://dex-api.coinex.org*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,25 +12,27 @@ Method | HTTP request | Description
 [**getMarketParams**](MarketApi.md#getMarketParams) | **GET** /market/parameters | Get the current market parameters
 [**getOrder**](MarketApi.md#getOrder) | **GET** /market/orders/{order-id} | Query order info
 [**getOrders**](MarketApi.md#getOrders) | **GET** /market/orders/account/{address} | Query user order-id list
-[**getOrdersInMarket**](MarketApi.md#getOrdersInMarket) | **GET** /market/orderbook/{stock}/{money} | Query trading-pair&#x27;s orderbook
+[**getOrdersInMarket**](MarketApi.md#getOrdersInMarket) | **GET** /market/orderbook/{stock}/{money} | Query trading-pair&#39;s orderbook
 [**getTradingPair**](MarketApi.md#getTradingPair) | **GET** /market/trading-pairs/{stock}/{money} | Query trading-pair info
 [**modifyPricePrecision**](MarketApi.md#modifyPricePrecision) | **POST** /market/price-precision | Modify the price precision of the trading pair in the dex
 [**queryTradingPairs**](MarketApi.md#queryTradingPairs) | **GET** /market/exist-trading-pairs | Query all trading-pair infos in blockchain
 
-<a name="cancelOrder"></a>
-# **cancelOrder**
-> StdTx cancelOrder(body)
+
+
+## cancelOrder
+
+> StdTx cancelOrder(orderInfo)
 
 Cancel the order
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.MarketApi();
-let body = null; // Object | cancel order tx
-
-apiInstance.cancelOrder(body).then((data) => {
+let orderInfo = new DexApiNodejs.InlineObject27(); // InlineObject27 | 
+apiInstance.cancelOrder(orderInfo).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -40,9 +42,10 @@ apiInstance.cancelOrder(body).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| cancel order tx | 
+ **orderInfo** | [**InlineObject27**](InlineObject27.md)|  | 
 
 ### Return type
 
@@ -54,23 +57,24 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="cancelTradingPair"></a>
-# **cancelTradingPair**
-> StdTx cancelTradingPair(body)
+
+## cancelTradingPair
+
+> StdTx cancelTradingPair(info)
 
 Cancel the trading-pair
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.MarketApi();
-let body = null; // Object | cancel trading-pair in dex
-
-apiInstance.cancelTradingPair(body).then((data) => {
+let info = new DexApiNodejs.InlineObject28(); // InlineObject28 | 
+apiInstance.cancelTradingPair(info).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -80,9 +84,10 @@ apiInstance.cancelTradingPair(body).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| cancel trading-pair in dex | 
+ **info** | [**InlineObject28**](InlineObject28.md)|  | 
 
 ### Return type
 
@@ -94,23 +99,24 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="createGteOrder"></a>
-# **createGteOrder**
-> StdTx createGteOrder(body)
+
+## createGteOrder
+
+> StdTx createGteOrder(orderInfo)
 
 Create GTE order in blockchain
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.MarketApi();
-let body = new DexApiNodejs.ModelObject(); // ModelObject | create order tx
-
-apiInstance.createGteOrder(body).then((data) => {
+let orderInfo = new DexApiNodejs.UNKNOWN_BASE_TYPE(); // UNKNOWN_BASE_TYPE | create order tx
+apiInstance.createGteOrder(orderInfo).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -120,9 +126,10 @@ apiInstance.createGteOrder(body).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ModelObject**](ModelObject.md)| create order tx | 
+ **orderInfo** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)| create order tx | 
 
 ### Return type
 
@@ -134,23 +141,24 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="createIocOrder"></a>
-# **createIocOrder**
-> StdTx createIocOrder(body)
+
+## createIocOrder
+
+> StdTx createIocOrder(orderInfo)
 
 Create IOC order in blockchain
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.MarketApi();
-let body = new DexApiNodejs.ModelObject(); // ModelObject | create order tx
-
-apiInstance.createIocOrder(body).then((data) => {
+let orderInfo = new DexApiNodejs.UNKNOWN_BASE_TYPE(); // UNKNOWN_BASE_TYPE | create order tx
+apiInstance.createIocOrder(orderInfo).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -160,9 +168,10 @@ apiInstance.createIocOrder(body).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ModelObject**](ModelObject.md)| create order tx | 
+ **orderInfo** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)| create order tx | 
 
 ### Return type
 
@@ -174,23 +183,24 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="createTradingPair"></a>
-# **createTradingPair**
-> StdTx createTradingPair(body)
+
+## createTradingPair
+
+> StdTx createTradingPair(info)
 
 Create trading-pair in blockchain
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.MarketApi();
-let body = new DexApiNodejs.ModelObject(); // ModelObject | Create trading-pair
-
-apiInstance.createTradingPair(body).then((data) => {
+let info = new DexApiNodejs.UNKNOWN_BASE_TYPE(); // UNKNOWN_BASE_TYPE | Create trading-pair
+apiInstance.createTradingPair(info).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -200,9 +210,10 @@ apiInstance.createTradingPair(body).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ModelObject**](ModelObject.md)| Create trading-pair | 
+ **info** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)| Create trading-pair | 
 
 ### Return type
 
@@ -214,16 +225,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="getMarketParams"></a>
-# **getMarketParams**
-> Object getMarketParams()
+
+## getMarketParams
+
+> InlineResponse20042 getMarketParams()
 
 Get the current market parameters
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
@@ -237,11 +250,12 @@ apiInstance.getMarketParams().then((data) => {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-**Object**
+[**InlineResponse20042**](InlineResponse20042.md)
 
 ### Authorization
 
@@ -249,22 +263,23 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getOrder"></a>
-# **getOrder**
-> Object getOrder(orderId)
+
+## getOrder
+
+> InlineResponse20046 getOrder(orderId)
 
 Query order info
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.MarketApi();
-let orderId = "orderId_example"; // String | The order id
-
+let orderId = coinex1dmz7e2fddhejdz5n7e3qc5szx3zn2gj3ta8rwj; // String | The order id
 apiInstance.getOrder(orderId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -275,13 +290,14 @@ apiInstance.getOrder(orderId).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **orderId** | **String**| The order id | 
 
 ### Return type
 
-**Object**
+[**InlineResponse20046**](InlineResponse20046.md)
 
 ### Authorization
 
@@ -289,22 +305,23 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getOrders"></a>
-# **getOrders**
-> Object getOrders(address)
+
+## getOrders
+
+> InlineResponse20047 getOrders(address)
 
 Query user order-id list
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.MarketApi();
-let address = "address_example"; // String | The user address
-
+let address = coinex1dmz7e2fddhejdz5n7e3qc5szx3zn2gj3ta8rwj; // String | The user address
 apiInstance.getOrders(address).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -315,13 +332,14 @@ apiInstance.getOrders(address).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **address** | **String**| The user address | 
 
 ### Return type
 
-**Object**
+[**InlineResponse20047**](InlineResponse20047.md)
 
 ### Authorization
 
@@ -329,23 +347,24 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getOrdersInMarket"></a>
-# **getOrdersInMarket**
-> Object getOrdersInMarket(stock, money)
 
-Query trading-pair&#x27;s orderbook
+## getOrdersInMarket
+
+> InlineResponse20045 getOrdersInMarket(stock, money)
+
+Query trading-pair&#39;s orderbook
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.MarketApi();
-let stock = "stock_example"; // String | stock symbol
-let money = "money_example"; // String | money symbol
-
+let stock = btc; // String | stock symbol
+let money = cet; // String | money symbol
 apiInstance.getOrdersInMarket(stock, money).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -356,6 +375,7 @@ apiInstance.getOrdersInMarket(stock, money).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **stock** | **String**| stock symbol | 
@@ -363,7 +383,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse20045**](InlineResponse20045.md)
 
 ### Authorization
 
@@ -371,23 +391,24 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getTradingPair"></a>
-# **getTradingPair**
-> Object getTradingPair(stock, money)
+
+## getTradingPair
+
+> InlineResponse20044 getTradingPair(stock, money)
 
 Query trading-pair info
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.MarketApi();
-let stock = "stock_example"; // String | stock symbol
-let money = "money_example"; // String | money symbol
-
+let stock = btc; // String | stock symbol
+let money = cet; // String | money symbol
 apiInstance.getTradingPair(stock, money).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -398,6 +419,7 @@ apiInstance.getTradingPair(stock, money).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **stock** | **String**| stock symbol | 
@@ -405,7 +427,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse20044**](InlineResponse20044.md)
 
 ### Authorization
 
@@ -413,23 +435,24 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="modifyPricePrecision"></a>
-# **modifyPricePrecision**
-> StdTx modifyPricePrecision(body)
+
+## modifyPricePrecision
+
+> StdTx modifyPricePrecision(info)
 
 Modify the price precision of the trading pair in the dex
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.MarketApi();
-let body = null; // Object | trading-pair, price-precision as params
-
-apiInstance.modifyPricePrecision(body).then((data) => {
+let info = new DexApiNodejs.InlineObject26(); // InlineObject26 | 
+apiInstance.modifyPricePrecision(info).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -439,9 +462,10 @@ apiInstance.modifyPricePrecision(body).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| trading-pair, price-precision as params | 
+ **info** | [**InlineObject26**](InlineObject26.md)|  | 
 
 ### Return type
 
@@ -453,16 +477,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="queryTradingPairs"></a>
-# **queryTradingPairs**
-> Object queryTradingPairs()
+
+## queryTradingPairs
+
+> InlineResponse20043 queryTradingPairs()
 
 Query all trading-pair infos in blockchain
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
@@ -476,11 +502,12 @@ apiInstance.queryTradingPairs().then((data) => {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-**Object**
+[**InlineResponse20043**](InlineResponse20043.md)
 
 ### Authorization
 
@@ -488,6 +515,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 

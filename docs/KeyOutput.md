@@ -1,6 +1,7 @@
 # DexApiNodejs.KeyOutput
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | [optional] 
@@ -8,3 +9,5 @@ Name | Type | Description | Notes
 **pubKey** | **String** |  | [optional] 
 **type** | **String** |  | [optional] 
 **seed** | **String** |  | [optional] 
+
+

@@ -1,6 +1,6 @@
 # DexApiNodejs.DistributionApi
 
-All URIs are relative to *https://dex-api.coinex.org/*
+All URIs are relative to *https://dex-api.coinex.org*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,27 +14,29 @@ Method | HTTP request | Description
 [**getValidatorRewards**](DistributionApi.md#getValidatorRewards) | **GET** /distribution/validators/{validatorAddr}/rewards | Commission and self-delegation rewards of a single validator
 [**getWithdrawAddress**](DistributionApi.md#getWithdrawAddress) | **GET** /distribution/delegators/{delegatorAddr}/withdraw_address | Get the rewards withdrawal address
 [**setWithdrawAddress**](DistributionApi.md#setWithdrawAddress) | **POST** /distribution/delegators/{delegatorAddr}/withdraw_address | Replace the rewards withdrawal address
-[**withdrawAllRewards**](DistributionApi.md#withdrawAllRewards) | **POST** /distribution/delegators/{delegatorAddr}/rewards | Withdraw all the delegator&#x27;s delegation rewards
-[**withdrawAllValidatorRewards**](DistributionApi.md#withdrawAllValidatorRewards) | **POST** /distribution/validators/{validatorAddr}/rewards | Withdraw the validator&#x27;s rewards
+[**withdrawAllRewards**](DistributionApi.md#withdrawAllRewards) | **POST** /distribution/delegators/{delegatorAddr}/rewards | Withdraw all the delegator&#39;s delegation rewards
+[**withdrawAllValidatorRewards**](DistributionApi.md#withdrawAllValidatorRewards) | **POST** /distribution/validators/{validatorAddr}/rewards | Withdraw the validator&#39;s rewards
 [**withdrawRewardsByValidator**](DistributionApi.md#withdrawRewardsByValidator) | **POST** /distribution/delegators/{delegatorAddr}/rewards/{validatorAddr} | Withdraw a delegation reward
 
-<a name="donateToCommunityPool"></a>
-# **donateToCommunityPool**
-> StdTx donateToCommunityPool(bodyaccAddress)
+
+
+## donateToCommunityPool
+
+> StdTx donateToCommunityPool(accAddress, amount)
 
 Donate to the community pool
 
 Donate some amount of cet to the community pool
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.DistributionApi();
-let body = null; // Object | Amount of cet to donate
-let accAddress = "accAddress_example"; // String | Account address of the user
-
-apiInstance.donateToCommunityPool(bodyaccAddress).then((data) => {
+let accAddress = coinex1628t2zxa9antj3qtkg7xj2m4t68uljqvyjqrup; // String | Account address of the user
+let amount = new DexApiNodejs.InlineObject19(); // InlineObject19 | 
+apiInstance.donateToCommunityPool(accAddress, amount).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -44,10 +46,11 @@ apiInstance.donateToCommunityPool(bodyaccAddress).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| Amount of cet to donate | 
  **accAddress** | **String**| Account address of the user | 
+ **amount** | [**InlineObject19**](InlineObject19.md)|  | 
 
 ### Return type
 
@@ -59,24 +62,25 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="getAllRewards"></a>
-# **getAllRewards**
-> Object getAllRewards(delegatorAddr)
+
+## getAllRewards
+
+> InlineResponse20029 getAllRewards(delegatorAddr)
 
 Get the total rewards balance from all delegations
 
 Get the sum of all the rewards earned by delegations by a single delegator
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.DistributionApi();
-let delegatorAddr = "delegatorAddr_example"; // String | Bech32 AccAddress of Delegator
-
+let delegatorAddr = coinex167w96tdvmazakdwkw2u57227eduula2cy572lf; // String | Bech32 AccAddress of Delegator
 apiInstance.getAllRewards(delegatorAddr).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -87,13 +91,14 @@ apiInstance.getAllRewards(delegatorAddr).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delegatorAddr** | **String**| Bech32 AccAddress of Delegator | 
 
 ### Return type
 
-**Object**
+[**InlineResponse20029**](InlineResponse20029.md)
 
 ### Authorization
 
@@ -101,16 +106,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getCommunityPool"></a>
-# **getCommunityPool**
+
+## getCommunityPool
+
 > Object getCommunityPool()
 
 Community pool parameters
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
@@ -124,6 +131,7 @@ apiInstance.getCommunityPool().then((data) => {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -136,24 +144,25 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getDistributionInfo"></a>
-# **getDistributionInfo**
-> Object getDistributionInfo(validatorAddr)
+
+## getDistributionInfo
+
+> InlineResponse20032 getDistributionInfo(validatorAddr)
 
 Validator distribution information
 
 Query the distribution information of a single validator
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.DistributionApi();
-let validatorAddr = "validatorAddr_example"; // String | Bech32 OperatorAddress of validator
-
+let validatorAddr = coinexvaloper1qwl879nx9t6kef4supyazayf7vjhennyh568ys; // String | Bech32 OperatorAddress of validator
 apiInstance.getDistributionInfo(validatorAddr).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -164,13 +173,14 @@ apiInstance.getDistributionInfo(validatorAddr).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **validatorAddr** | **String**| Bech32 OperatorAddress of validator | 
 
 ### Return type
 
-**Object**
+[**InlineResponse20032**](InlineResponse20032.md)
 
 ### Authorization
 
@@ -178,16 +188,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getDistributionParams"></a>
-# **getDistributionParams**
-> Object getDistributionParams()
+
+## getDistributionParams
+
+> InlineResponse20033 getDistributionParams()
 
 Fee distribution parameters
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
@@ -201,11 +213,12 @@ apiInstance.getDistributionParams().then((data) => {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-**Object**
+[**InlineResponse20033**](InlineResponse20033.md)
 
 ### Authorization
 
@@ -213,22 +226,23 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getOutstandingRewards"></a>
-# **getOutstandingRewards**
+
+## getOutstandingRewards
+
 > Object getOutstandingRewards(validatorAddr)
 
 Fee distribution outstanding rewards of a single validator
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.DistributionApi();
-let validatorAddr = "validatorAddr_example"; // String | Bech32 OperatorAddress of validator
-
+let validatorAddr = coinexvaloper1qwl879nx9t6kef4supyazayf7vjhennyh568ys; // String | Bech32 OperatorAddress of validator
 apiInstance.getOutstandingRewards(validatorAddr).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -239,6 +253,7 @@ apiInstance.getOutstandingRewards(validatorAddr).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **validatorAddr** | **String**| Bech32 OperatorAddress of validator | 
@@ -253,25 +268,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getRewardByValidator"></a>
-# **getRewardByValidator**
-> Object getRewardByValidator(delegatorAddr, validatorAddr)
+
+## getRewardByValidator
+
+> InlineResponse20030 getRewardByValidator(delegatorAddr, validatorAddr)
 
 Query a delegation reward
 
 Query a single delegation reward by a delegator
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.DistributionApi();
-let delegatorAddr = "delegatorAddr_example"; // String | Bech32 AccAddress of Delegator
-let validatorAddr = "validatorAddr_example"; // String | Bech32 OperatorAddress of validator
-
+let delegatorAddr = coinex167w96tdvmazakdwkw2u57227eduula2cy572lf; // String | Bech32 AccAddress of Delegator
+let validatorAddr = coinexvaloper1qwl879nx9t6kef4supyazayf7vjhennyh568ys; // String | Bech32 OperatorAddress of validator
 apiInstance.getRewardByValidator(delegatorAddr, validatorAddr).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -282,6 +298,7 @@ apiInstance.getRewardByValidator(delegatorAddr, validatorAddr).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delegatorAddr** | **String**| Bech32 AccAddress of Delegator | 
@@ -289,7 +306,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse20030**](InlineResponse20030.md)
 
 ### Authorization
 
@@ -297,24 +314,25 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getValidatorRewards"></a>
-# **getValidatorRewards**
-> Object getValidatorRewards(validatorAddr)
+
+## getValidatorRewards
+
+> InlineResponse20030 getValidatorRewards(validatorAddr)
 
 Commission and self-delegation rewards of a single validator
 
 Query the commission and self-delegation rewards of validator.
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.DistributionApi();
-let validatorAddr = "validatorAddr_example"; // String | Bech32 OperatorAddress of validator
-
+let validatorAddr = coinexvaloper1qwl879nx9t6kef4supyazayf7vjhennyh568ys; // String | Bech32 OperatorAddress of validator
 apiInstance.getValidatorRewards(validatorAddr).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -325,13 +343,14 @@ apiInstance.getValidatorRewards(validatorAddr).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **validatorAddr** | **String**| Bech32 OperatorAddress of validator | 
 
 ### Return type
 
-**Object**
+[**InlineResponse20030**](InlineResponse20030.md)
 
 ### Authorization
 
@@ -339,24 +358,25 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getWithdrawAddress"></a>
-# **getWithdrawAddress**
-> Object getWithdrawAddress(delegatorAddr)
+
+## getWithdrawAddress
+
+> InlineResponse20031 getWithdrawAddress(delegatorAddr)
 
 Get the rewards withdrawal address
 
-Get the delegations&#x27; rewards withdrawal address. This is the address in which the user will receive the reward funds
+Get the delegations&#39; rewards withdrawal address. This is the address in which the user will receive the reward funds
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.DistributionApi();
-let delegatorAddr = "delegatorAddr_example"; // String | Bech32 AccAddress of Delegator
-
+let delegatorAddr = coinex167w96tdvmazakdwkw2u57227eduula2cy572lf; // String | Bech32 AccAddress of Delegator
 apiInstance.getWithdrawAddress(delegatorAddr).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -367,13 +387,14 @@ apiInstance.getWithdrawAddress(delegatorAddr).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delegatorAddr** | **String**| Bech32 AccAddress of Delegator | 
 
 ### Return type
 
-**Object**
+[**InlineResponse20031**](InlineResponse20031.md)
 
 ### Authorization
 
@@ -381,25 +402,29 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="setWithdrawAddress"></a>
-# **setWithdrawAddress**
-> BroadcastTxCommitResult setWithdrawAddress(delegatorAddr)
+
+## setWithdrawAddress
+
+> BroadcastTxCommitResult setWithdrawAddress(delegatorAddr, opts)
 
 Replace the rewards withdrawal address
 
-Replace the delegations&#x27; rewards withdrawal address for a new one.
+Replace the delegations&#39; rewards withdrawal address for a new one.
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.DistributionApi();
 let delegatorAddr = "delegatorAddr_example"; // String | Bech32 AccAddress of Delegator
-
-apiInstance.setWithdrawAddress(delegatorAddr).then((data) => {
+let opts = {
+  'withdrawRequestBody': new DexApiNodejs.InlineObject17() // InlineObject17 | 
+};
+apiInstance.setWithdrawAddress(delegatorAddr, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -409,10 +434,11 @@ apiInstance.setWithdrawAddress(delegatorAddr).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delegatorAddr** | **String**| Bech32 AccAddress of Delegator | 
- **body** | [**Object**](Object.md)|  | [optional] 
+ **withdrawRequestBody** | [**InlineObject17**](InlineObject17.md)|  | [optional] 
 
 ### Return type
 
@@ -424,25 +450,29 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="withdrawAllRewards"></a>
-# **withdrawAllRewards**
-> BroadcastTxCommitResult withdrawAllRewards(delegatorAddr)
 
-Withdraw all the delegator&#x27;s delegation rewards
+## withdrawAllRewards
 
-Withdraw all the delegator&#x27;s delegation rewards
+> BroadcastTxCommitResult withdrawAllRewards(delegatorAddr, opts)
+
+Withdraw all the delegator&#39;s delegation rewards
+
+Withdraw all the delegator&#39;s delegation rewards
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.DistributionApi();
 let delegatorAddr = "delegatorAddr_example"; // String | Bech32 AccAddress of Delegator
-
-apiInstance.withdrawAllRewards(delegatorAddr).then((data) => {
+let opts = {
+  'withdrawRequestBody': new DexApiNodejs.InlineObject15() // InlineObject15 | 
+};
+apiInstance.withdrawAllRewards(delegatorAddr, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -452,10 +482,11 @@ apiInstance.withdrawAllRewards(delegatorAddr).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delegatorAddr** | **String**| Bech32 AccAddress of Delegator | 
- **body** | [**Object**](Object.md)|  | [optional] 
+ **withdrawRequestBody** | [**InlineObject15**](InlineObject15.md)|  | [optional] 
 
 ### Return type
 
@@ -467,25 +498,29 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="withdrawAllValidatorRewards"></a>
-# **withdrawAllValidatorRewards**
-> BroadcastTxCommitResult withdrawAllValidatorRewards(validatorAddr)
 
-Withdraw the validator&#x27;s rewards
+## withdrawAllValidatorRewards
 
-Withdraw the validator&#x27;s self-delegation and commissions rewards
+> BroadcastTxCommitResult withdrawAllValidatorRewards(validatorAddr, opts)
+
+Withdraw the validator&#39;s rewards
+
+Withdraw the validator&#39;s self-delegation and commissions rewards
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.DistributionApi();
 let validatorAddr = "validatorAddr_example"; // String | Bech32 OperatorAddress of validator
-
-apiInstance.withdrawAllValidatorRewards(validatorAddr).then((data) => {
+let opts = {
+  'withdrawRequestBody': new DexApiNodejs.InlineObject18() // InlineObject18 | 
+};
+apiInstance.withdrawAllValidatorRewards(validatorAddr, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -495,10 +530,11 @@ apiInstance.withdrawAllValidatorRewards(validatorAddr).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **validatorAddr** | **String**| Bech32 OperatorAddress of validator | 
- **body** | [**Object**](Object.md)|  | [optional] 
+ **withdrawRequestBody** | [**InlineObject18**](InlineObject18.md)|  | [optional] 
 
 ### Return type
 
@@ -510,26 +546,30 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="withdrawRewardsByValidator"></a>
-# **withdrawRewardsByValidator**
-> BroadcastTxCommitResult withdrawRewardsByValidator(delegatorAddrvalidatorAddr)
+
+## withdrawRewardsByValidator
+
+> BroadcastTxCommitResult withdrawRewardsByValidator(delegatorAddr, validatorAddr, opts)
 
 Withdraw a delegation reward
 
-Withdraw a delegator&#x27;s delegation reward from a single validator
+Withdraw a delegator&#39;s delegation reward from a single validator
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.DistributionApi();
 let delegatorAddr = "delegatorAddr_example"; // String | Bech32 AccAddress of Delegator
 let validatorAddr = "validatorAddr_example"; // String | Bech32 OperatorAddress of validator
-
-apiInstance.withdrawRewardsByValidator(delegatorAddrvalidatorAddr).then((data) => {
+let opts = {
+  'withdrawRequestBody': new DexApiNodejs.InlineObject16() // InlineObject16 | 
+};
+apiInstance.withdrawRewardsByValidator(delegatorAddr, validatorAddr, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -539,11 +579,12 @@ apiInstance.withdrawRewardsByValidator(delegatorAddrvalidatorAddr).then((data) =
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delegatorAddr** | **String**| Bech32 AccAddress of Delegator | 
  **validatorAddr** | **String**| Bech32 OperatorAddress of validator | 
- **body** | [**Object**](Object.md)|  | [optional] 
+ **withdrawRequestBody** | [**InlineObject16**](InlineObject16.md)|  | [optional] 
 
 ### Return type
 
@@ -555,6 +596,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 

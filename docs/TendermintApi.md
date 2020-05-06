@@ -1,6 +1,6 @@
 # DexApiNodejs.TendermintApi
 
-All URIs are relative to *https://dex-api.coinex.org/*
+All URIs are relative to *https://dex-api.coinex.org*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,19 +11,21 @@ Method | HTTP request | Description
 [**getSyncing**](TendermintApi.md#getSyncing) | **GET** /syncing | Syncing state of node
 [**getValidatorSet**](TendermintApi.md#getValidatorSet) | **GET** /validatorsets/{height} | Get a validator set a certain height
 
-<a name="getBlock"></a>
-# **getBlock**
+
+
+## getBlock
+
 > BlockQuery getBlock(height)
 
 Get a block at a certain height
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.TendermintApi();
-let height = new DexApiNodejs.BigDecimal(); // BigDecimal | Block height
-
+let height = 1; // Number | Block height
 apiInstance.getBlock(height).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -34,9 +36,10 @@ apiInstance.getBlock(height).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **height** | **BigDecimal**| Block height | 
+ **height** | **Number**| Block height | 
 
 ### Return type
 
@@ -48,16 +51,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getLatestBlock"></a>
-# **getLatestBlock**
+
+## getLatestBlock
+
 > BlockQuery getLatestBlock()
 
 Get the latest block
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
@@ -71,6 +76,7 @@ apiInstance.getLatestBlock().then((data) => {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -83,16 +89,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getLatestValidatorSet"></a>
-# **getLatestValidatorSet**
-> Object getLatestValidatorSet()
+
+## getLatestValidatorSet
+
+> InlineResponse2001 getLatestValidatorSet()
 
 Get the latest validator set
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
@@ -106,11 +114,12 @@ apiInstance.getLatestValidatorSet().then((data) => {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-**Object**
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -118,18 +127,20 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getNodeInfo"></a>
-# **getNodeInfo**
-> Object getNodeInfo()
+
+## getNodeInfo
+
+> InlineResponse200 getNodeInfo()
 
 The properties of the connected node
 
 Information about the connected node
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
@@ -143,11 +154,12 @@ apiInstance.getNodeInfo().then((data) => {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-**Object**
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -155,11 +167,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getSyncing"></a>
-# **getSyncing**
+
+## getSyncing
+
 > getSyncing()
 
 Syncing state of node
@@ -167,6 +180,7 @@ Syncing state of node
 Get if the node is currently syning with other nodes
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
@@ -180,6 +194,7 @@ apiInstance.getSyncing().then(() => {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -192,22 +207,23 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
-<a name="getValidatorSet"></a>
-# **getValidatorSet**
-> Object getValidatorSet(height)
+
+## getValidatorSet
+
+> InlineResponse2002 getValidatorSet(height)
 
 Get a validator set a certain height
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.TendermintApi();
-let height = new DexApiNodejs.BigDecimal(); // BigDecimal | Block height
-
+let height = 1; // Number | Block height
 apiInstance.getValidatorSet(height).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -218,13 +234,14 @@ apiInstance.getValidatorSet(height).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **height** | **BigDecimal**| Block height | 
+ **height** | **Number**| Block height | 
 
 ### Return type
 
-**Object**
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 
@@ -232,6 +249,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 

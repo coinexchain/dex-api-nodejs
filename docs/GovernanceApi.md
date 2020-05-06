@@ -1,6 +1,6 @@
 # DexApiNodejs.GovernanceApi
 
-All URIs are relative to *https://dex-api.coinex.org/*
+All URIs are relative to *https://dex-api.coinex.org*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**getProposalByID**](GovernanceApi.md#getProposalByID) | **GET** /gov/proposals/{proposalId} | Query a proposal
 [**getProposals**](GovernanceApi.md#getProposals) | **GET** /gov/proposals | Query proposals
 [**getProposer**](GovernanceApi.md#getProposer) | **GET** /gov/proposals/{proposalId}/proposer | Query proposer
-[**getTally**](GovernanceApi.md#getTally) | **GET** /gov/proposals/{proposalId}/tally | Get a proposal&#x27;s tally result at the current time
+[**getTally**](GovernanceApi.md#getTally) | **GET** /gov/proposals/{proposalId}/tally | Get a proposal&#39;s tally result at the current time
 [**getTallyingParameters**](GovernanceApi.md#getTallyingParameters) | **GET** /gov/parameters/tallying | Query governance tally parameters
 [**getVoterByAddr**](GovernanceApi.md#getVoterByAddr) | **GET** /gov/proposals/{proposalId}/votes/{voter} | Query vote
 [**getVoters**](GovernanceApi.md#getVoters) | **GET** /gov/proposals/{proposalId}/votes | Query voters
@@ -21,23 +21,25 @@ Method | HTTP request | Description
 [**submitProposal**](GovernanceApi.md#submitProposal) | **POST** /gov/proposals | Submit a proposal
 [**voteProposal**](GovernanceApi.md#voteProposal) | **POST** /gov/proposals/{proposalId}/votes | Vote a proposal
 
-<a name="depositToProposal"></a>
-# **depositToProposal**
-> BroadcastTxCommitResult depositToProposal(bodyproposalId)
+
+
+## depositToProposal
+
+> BroadcastTxCommitResult depositToProposal(proposalId, postDepositBody)
 
 Deposit tokens to a proposal
 
 Send transaction to deposit tokens to a proposal
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.GovernanceApi();
-let body = null; // Object | 
-let proposalId = "proposalId_example"; // String | proposal id
-
-apiInstance.depositToProposal(bodyproposalId).then((data) => {
+let proposalId = 2; // String | proposal id
+let postDepositBody = new DexApiNodejs.InlineObject13(); // InlineObject13 | 
+apiInstance.depositToProposal(proposalId, postDepositBody).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -47,10 +49,11 @@ apiInstance.depositToProposal(bodyproposalId).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)|  | 
  **proposalId** | **String**| proposal id | 
+ **postDepositBody** | [**InlineObject13**](InlineObject13.md)|  | 
 
 ### Return type
 
@@ -62,25 +65,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="getDepositByAddr"></a>
-# **getDepositByAddr**
-> Object getDepositByAddr(proposalId, depositor)
+
+## getDepositByAddr
+
+> InlineResponse20022 getDepositByAddr(proposalId, depositor)
 
 Query deposit
 
 Query deposit by proposalId and depositor address
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.GovernanceApi();
-let proposalId = "proposalId_example"; // String | proposal id
-let depositor = "depositor_example"; // String | Bech32 depositor address
-
+let proposalId = 2; // String | proposal id
+let depositor = coinex1xl6453f6q6dv5770c9ue6hspdc0vxfuqtudkhz; // String | Bech32 depositor address
 apiInstance.getDepositByAddr(proposalId, depositor).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -91,6 +95,7 @@ apiInstance.getDepositByAddr(proposalId, depositor).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **proposalId** | **String**| proposal id | 
@@ -98,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse20022**](InlineResponse20022.md)
 
 ### Authorization
 
@@ -106,18 +111,20 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getDepositParameters"></a>
-# **getDepositParameters**
-> Object getDepositParameters()
+
+## getDepositParameters
+
+> InlineResponse20026 getDepositParameters()
 
 Query governance deposit parameters
 
 Query governance deposit parameters. The max_deposit_period units are in nanoseconds.
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
@@ -131,11 +138,12 @@ apiInstance.getDepositParameters().then((data) => {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-**Object**
+[**InlineResponse20026**](InlineResponse20026.md)
 
 ### Authorization
 
@@ -143,24 +151,25 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getDeposits"></a>
-# **getDeposits**
-> Object getDeposits(proposalId)
+
+## getDeposits
+
+> InlineResponse20021 getDeposits(proposalId)
 
 Query deposits
 
 Query deposits by proposalId
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.GovernanceApi();
-let proposalId = "proposalId_example"; // String | 
-
+let proposalId = 2; // String | 
 apiInstance.getDeposits(proposalId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -171,13 +180,14 @@ apiInstance.getDeposits(proposalId).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **proposalId** | **String**|  | 
 
 ### Return type
 
-**Object**
+[**InlineResponse20021**](InlineResponse20021.md)
 
 ### Authorization
 
@@ -185,24 +195,25 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getProposalByID"></a>
-# **getProposalByID**
-> Object getProposalByID(proposalId)
+
+## getProposalByID
+
+> InlineResponse20019 getProposalByID(proposalId)
 
 Query a proposal
 
 Query a proposal by id
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.GovernanceApi();
-let proposalId = "proposalId_example"; // String | 
-
+let proposalId = 1; // String | 
 apiInstance.getProposalByID(proposalId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -213,13 +224,14 @@ apiInstance.getProposalByID(proposalId).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **proposalId** | **String**|  | 
 
 ### Return type
 
-**Object**
+[**InlineResponse20019**](InlineResponse20019.md)
 
 ### Authorization
 
@@ -227,23 +239,25 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getProposals"></a>
-# **getProposals**
-> Object getProposals(opts)
+
+## getProposals
+
+> InlineResponse20018 getProposals(opts)
 
 Query proposals
 
 Query proposals information with parameters
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.GovernanceApi();
-let opts = { 
+let opts = {
   'voter': "voter_example", // String | voter address
   'depositor': "depositor_example", // String | depositor address
   'status': "status_example" // String | proposal status, valid values can be `\"deposit_period\"`, `\"voting_period\"`, `\"passed\"`, `\"rejected\"`
@@ -258,6 +272,7 @@ apiInstance.getProposals(opts).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **voter** | **String**| voter address | [optional] 
@@ -266,7 +281,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse20018**](InlineResponse20018.md)
 
 ### Authorization
 
@@ -274,24 +289,25 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getProposer"></a>
-# **getProposer**
-> Object getProposer(proposalId)
+
+## getProposer
+
+> InlineResponse20020 getProposer(proposalId)
 
 Query proposer
 
 Query for the proposer for a proposal
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.GovernanceApi();
-let proposalId = "proposalId_example"; // String | 
-
+let proposalId = 2; // String | 
 apiInstance.getProposer(proposalId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -302,13 +318,14 @@ apiInstance.getProposer(proposalId).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **proposalId** | **String**|  | 
 
 ### Return type
 
-**Object**
+[**InlineResponse20020**](InlineResponse20020.md)
 
 ### Authorization
 
@@ -316,24 +333,25 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getTally"></a>
-# **getTally**
-> Object getTally(proposalId)
 
-Get a proposal&#x27;s tally result at the current time
+## getTally
 
-Gets a proposal&#x27;s tally result at the current time. If the proposal is pending deposits (i.e status &#x27;DepositPeriod&#x27;) it returns an empty tally result.
+> InlineResponse20025 getTally(proposalId)
+
+Get a proposal&#39;s tally result at the current time
+
+Gets a proposal&#39;s tally result at the current time. If the proposal is pending deposits (i.e status &#39;DepositPeriod&#39;) it returns an empty tally result.
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.GovernanceApi();
-let proposalId = "proposalId_example"; // String | proposal id
-
+let proposalId = 2; // String | proposal id
 apiInstance.getTally(proposalId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -344,13 +362,14 @@ apiInstance.getTally(proposalId).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **proposalId** | **String**| proposal id | 
 
 ### Return type
 
-**Object**
+[**InlineResponse20025**](InlineResponse20025.md)
 
 ### Authorization
 
@@ -358,18 +377,20 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getTallyingParameters"></a>
-# **getTallyingParameters**
-> Object getTallyingParameters()
+
+## getTallyingParameters
+
+> InlineResponse20027 getTallyingParameters()
 
 Query governance tally parameters
 
 Query governance tally parameters
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
@@ -383,11 +404,12 @@ apiInstance.getTallyingParameters().then((data) => {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-**Object**
+[**InlineResponse20027**](InlineResponse20027.md)
 
 ### Authorization
 
@@ -395,25 +417,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getVoterByAddr"></a>
-# **getVoterByAddr**
-> Object getVoterByAddr(proposalId, voter)
+
+## getVoterByAddr
+
+> InlineResponse20024 getVoterByAddr(proposalId, voter)
 
 Query vote
 
 Query vote information by proposal Id and voter address
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.GovernanceApi();
-let proposalId = "proposalId_example"; // String | proposal id
-let voter = "voter_example"; // String | Bech32 voter address
-
+let proposalId = 2; // String | proposal id
+let voter = coinex1qwl879nx9t6kef4supyazayf7vjhennyjqwjgr; // String | Bech32 voter address
 apiInstance.getVoterByAddr(proposalId, voter).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -424,6 +447,7 @@ apiInstance.getVoterByAddr(proposalId, voter).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **proposalId** | **String**| proposal id | 
@@ -431,7 +455,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse20024**](InlineResponse20024.md)
 
 ### Authorization
 
@@ -439,24 +463,25 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getVoters"></a>
-# **getVoters**
-> Object getVoters(proposalId)
+
+## getVoters
+
+> InlineResponse20023 getVoters(proposalId)
 
 Query voters
 
 Query voters information by proposalId
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.GovernanceApi();
-let proposalId = "proposalId_example"; // String | proposal id
-
+let proposalId = 2; // String | proposal id
 apiInstance.getVoters(proposalId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -467,13 +492,14 @@ apiInstance.getVoters(proposalId).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **proposalId** | **String**| proposal id | 
 
 ### Return type
 
-**Object**
+[**InlineResponse20023**](InlineResponse20023.md)
 
 ### Authorization
 
@@ -481,18 +507,20 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getVotingParameters"></a>
-# **getVotingParameters**
-> Object getVotingParameters()
+
+## getVotingParameters
+
+> InlineResponse20028 getVotingParameters()
 
 Query governance voting parameters
 
 Query governance voting parameters. The voting_period units are in nanoseconds.
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
@@ -506,11 +534,12 @@ apiInstance.getVotingParameters().then((data) => {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-**Object**
+[**InlineResponse20028**](InlineResponse20028.md)
 
 ### Authorization
 
@@ -518,25 +547,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="submitCommunityPoolSpendProposal"></a>
-# **submitCommunityPoolSpendProposal**
-> StdTx submitCommunityPoolSpendProposal(body)
+
+## submitCommunityPoolSpendProposal
+
+> StdTx submitCommunityPoolSpendProposal(postProposalBody)
 
 Generate a community pool spend proposal transaction
 
 Generate a community pool spend proposal transaction
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.GovernanceApi();
-let body = null; // Object | The community pool spend proposal body contains coin amount to be spent
-
-apiInstance.submitCommunityPoolSpendProposal(body).then((data) => {
+let postProposalBody = new DexApiNodejs.InlineObject12(); // InlineObject12 | 
+apiInstance.submitCommunityPoolSpendProposal(postProposalBody).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -546,9 +576,10 @@ apiInstance.submitCommunityPoolSpendProposal(body).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| The community pool spend proposal body contains coin amount to be spent | 
+ **postProposalBody** | [**InlineObject12**](InlineObject12.md)|  | 
 
 ### Return type
 
@@ -560,25 +591,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="submitParameterChangeProposal"></a>
-# **submitParameterChangeProposal**
-> StdTx submitParameterChangeProposal(body)
+
+## submitParameterChangeProposal
+
+> StdTx submitParameterChangeProposal(postProposalBody)
 
 Generate a parameter change proposal transaction
 
 Generate a parameter change proposal transaction
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.GovernanceApi();
-let body = null; // Object | The parameter change proposal body that contains all parameter changes
-
-apiInstance.submitParameterChangeProposal(body).then((data) => {
+let postProposalBody = new DexApiNodejs.InlineObject11(); // InlineObject11 | 
+apiInstance.submitParameterChangeProposal(postProposalBody).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -588,9 +620,10 @@ apiInstance.submitParameterChangeProposal(body).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| The parameter change proposal body that contains all parameter changes | 
+ **postProposalBody** | [**InlineObject11**](InlineObject11.md)|  | 
 
 ### Return type
 
@@ -602,25 +635,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="submitProposal"></a>
-# **submitProposal**
-> StdTx submitProposal(body)
+
+## submitProposal
+
+> StdTx submitProposal(postProposalBody)
 
 Submit a proposal
 
 Send transaction to submit a proposal
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.GovernanceApi();
-let body = null; // Object | valid value of `"proposal_type"` can be `"text"`, `"parameter_change"`, `"software_upgrade"`
-
-apiInstance.submitProposal(body).then((data) => {
+let postProposalBody = new DexApiNodejs.InlineObject10(); // InlineObject10 | 
+apiInstance.submitProposal(postProposalBody).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -630,9 +664,10 @@ apiInstance.submitProposal(body).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| valid value of &#x60;&quot;proposal_type&quot;&#x60; can be &#x60;&quot;text&quot;&#x60;, &#x60;&quot;parameter_change&quot;&#x60;, &#x60;&quot;software_upgrade&quot;&#x60; | 
+ **postProposalBody** | [**InlineObject10**](InlineObject10.md)|  | 
 
 ### Return type
 
@@ -644,26 +679,27 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="voteProposal"></a>
-# **voteProposal**
-> BroadcastTxCommitResult voteProposal(bodyproposalId)
+
+## voteProposal
+
+> BroadcastTxCommitResult voteProposal(proposalId, postVoteBody)
 
 Vote a proposal
 
 Send transaction to vote a proposal
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.GovernanceApi();
-let body = null; // Object | valid value of `"option"` field can be `"yes"`, `"no"`, `"no_with_veto"` and `"abstain"`
-let proposalId = "proposalId_example"; // String | proposal id
-
-apiInstance.voteProposal(bodyproposalId).then((data) => {
+let proposalId = 2; // String | proposal id
+let postVoteBody = new DexApiNodejs.InlineObject14(); // InlineObject14 | 
+apiInstance.voteProposal(proposalId, postVoteBody).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -673,10 +709,11 @@ apiInstance.voteProposal(bodyproposalId).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| valid value of &#x60;&quot;option&quot;&#x60; field can be &#x60;&quot;yes&quot;&#x60;, &#x60;&quot;no&quot;&#x60;, &#x60;&quot;no_with_veto&quot;&#x60; and &#x60;&quot;abstain&quot;&#x60; | 
  **proposalId** | **String**| proposal id | 
+ **postVoteBody** | [**InlineObject14**](InlineObject14.md)|  | 
 
 ### Return type
 
@@ -688,6 +725,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 

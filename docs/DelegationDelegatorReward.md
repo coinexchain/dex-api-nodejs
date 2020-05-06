@@ -1,7 +1,10 @@
 # DexApiNodejs.DelegationDelegatorReward
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**validatorAddress** | [**ValidatorAddress**](ValidatorAddress.md) |  | 
+**validatorAddress** | **String** | bech32 encoded address | 
 **reward** | [**[Coin]**](Coin.md) |  | 
+
+

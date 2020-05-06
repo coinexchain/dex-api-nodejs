@@ -1,6 +1,6 @@
 # DexApiNodejs.BankApi
 
-All URIs are relative to *https://dex-api.coinex.org/*
+All URIs are relative to *https://dex-api.coinex.org*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,19 +10,21 @@ Method | HTTP request | Description
 [**setMemoRequired**](BankApi.md#setMemoRequired) | **POST** /bank/accounts/memo | Mark if memo is required to receive coins
 [**transferSupervisedCoins**](BankApi.md#transferSupervisedCoins) | **POST** /bank/accounts/{address}/supervised_transfers | Operate a supervised transfer
 
-<a name="getAddressBalances"></a>
-# **getAddressBalances**
-> {&#x27;String&#x27;: Object} getAddressBalances(address)
+
+
+## getAddressBalances
+
+> {String: Object} getAddressBalances(address)
 
 Get the account balances
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.BankApi();
-let address = "address_example"; // String | Account address in bech32 format
-
+let address = coinex16gdxm24ht2mxtpz9cma6tr6a6d47x63hlq4pxt; // String | Account address in bech32 format
 apiInstance.getAddressBalances(address).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -33,13 +35,14 @@ apiInstance.getAddressBalances(address).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **address** | **String**| Account address in bech32 format | 
 
 ### Return type
 
-**{&#x27;String&#x27;: Object}**
+**{String: Object}**
 
 ### Authorization
 
@@ -47,16 +50,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getBankParams"></a>
-# **getBankParams**
-> Object getBankParams()
+
+## getBankParams
+
+> InlineResponse20035 getBankParams()
 
 Get the current bankx parameters
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
@@ -70,11 +75,12 @@ apiInstance.getBankParams().then((data) => {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-**Object**
+[**InlineResponse20035**](InlineResponse20035.md)
 
 ### Authorization
 
@@ -82,24 +88,25 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="sendCoins"></a>
-# **sendCoins**
-> StdTx sendCoins(bodyaddress)
+
+## sendCoins
+
+> StdTx sendCoins(address, account)
 
 Send coins from one account to another
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.BankApi();
-let body = null; // Object | The sender and tx information
-let address = "address_example"; // String | Account address in bech32 format
-
-apiInstance.sendCoins(bodyaddress).then((data) => {
+let address = coinex16gdxm24ht2mxtpz9cma6tr6a6d47x63hlq4pxt; // String | Account address in bech32 format
+let account = new DexApiNodejs.InlineObject2(); // InlineObject2 | 
+apiInstance.sendCoins(address, account).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -109,10 +116,11 @@ apiInstance.sendCoins(bodyaddress).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| The sender and tx information | 
  **address** | **String**| Account address in bech32 format | 
+ **account** | [**InlineObject2**](InlineObject2.md)|  | 
 
 ### Return type
 
@@ -124,23 +132,24 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="setMemoRequired"></a>
-# **setMemoRequired**
-> StdTx setMemoRequired(body)
+
+## setMemoRequired
+
+> StdTx setMemoRequired(account)
 
 Mark if memo is required to receive coins
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.BankApi();
-let body = null; // Object | The mark
-
-apiInstance.setMemoRequired(body).then((data) => {
+let account = new DexApiNodejs.InlineObject4(); // InlineObject4 | 
+apiInstance.setMemoRequired(account).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -150,9 +159,10 @@ apiInstance.setMemoRequired(body).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| The mark | 
+ **account** | [**InlineObject4**](InlineObject4.md)|  | 
 
 ### Return type
 
@@ -164,24 +174,25 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="transferSupervisedCoins"></a>
-# **transferSupervisedCoins**
-> StdTx transferSupervisedCoins(bodyaddress)
+
+## transferSupervisedCoins
+
+> StdTx transferSupervisedCoins(address, postTxBody)
 
 Operate a supervised transfer
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.BankApi();
-let body = null; // Object | The sender and tx information
-let address = "address_example"; // String | Account address in bech32 format
-
-apiInstance.transferSupervisedCoins(bodyaddress).then((data) => {
+let address = coinex16gdxm24ht2mxtpz9cma6tr6a6d47x63hlq4pxt; // String | Account address in bech32 format
+let postTxBody = new DexApiNodejs.InlineObject3(); // InlineObject3 | 
+apiInstance.transferSupervisedCoins(address, postTxBody).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -191,10 +202,11 @@ apiInstance.transferSupervisedCoins(bodyaddress).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| The sender and tx information | 
  **address** | **String**| Account address in bech32 format | 
+ **postTxBody** | [**InlineObject3**](InlineObject3.md)|  | 
 
 ### Return type
 
@@ -206,6 +218,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 

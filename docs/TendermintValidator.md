@@ -1,9 +1,12 @@
 # DexApiNodejs.TendermintValidator
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**address** | [**ValidatorAddress**](ValidatorAddress.md) |  | 
+**address** | **String** | bech32 encoded address | 
 **pubKey** | **String** |  | 
 **votingPower** | **String** |  | 
 **proposerPriority** | **String** |  | 
+
+

@@ -1,18 +1,21 @@
 # DexApiNodejs.BroadcastTxCommitResult
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **height** | **String** |  | [optional] 
-**txhash** | [**Hash**](Hash.md) |  | [optional] 
+**txhash** | **String** |  | [optional] 
 **code** | **Number** |  | [optional] 
 **data** | **String** |  | [optional] 
 **rawLog** | **String** |  | [optional] 
-**logs** | **[Object]** |  | [optional] 
+**logs** | [**[BroadcastTxCommitResultLogs]**](BroadcastTxCommitResultLogs.md) |  | [optional] 
 **info** | **String** |  | [optional] 
 **gasWanted** | **String** |  | [optional] 
 **gasUsed** | **String** |  | [optional] 
-**events** | **[Object]** |  | [optional] 
+**events** | [**[BroadcastTxCommitResultEvents]**](BroadcastTxCommitResultEvents.md) |  | [optional] 
 **codespace** | **String** |  | [optional] 
-**tx** | **Object** |  | [optional] 
+**tx** | [**Object**](.md) |  | [optional] 
 **timestamp** | **String** |  | [optional] 
+
+

@@ -1,6 +1,6 @@
 # DexApiNodejs.SlashingApi
 
-All URIs are relative to *https://dex-api.coinex.org/*
+All URIs are relative to *https://dex-api.coinex.org*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,21 +9,23 @@ Method | HTTP request | Description
 [**getSlashingParams**](SlashingApi.md#getSlashingParams) | **GET** /slashing/parameters | Get the current slashing parameters
 [**unjailValidator**](SlashingApi.md#unjailValidator) | **POST** /slashing/validators/{validatorAddr}/unjail | Unjail a jailed validator
 
-<a name="getSigningInfo"></a>
-# **getSigningInfo**
-> Object getSigningInfo(validatorPubKey)
+
+
+## getSigningInfo
+
+> InlineResponse20015 getSigningInfo(validatorPubKey)
 
 Get sign info of given validator
 
 Get sign info of given validator
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.SlashingApi();
-let validatorPubKey = "validatorPubKey_example"; // String | Bech32 validator public key
-
+let validatorPubKey = coinexvalconspub1zcjduepq7mft6gfls57a0a42d7uhx656cckhfvtrlmw744jv4q0mvlv0dypskehfk8; // String | Bech32 validator public key
 apiInstance.getSigningInfo(validatorPubKey).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -34,13 +36,14 @@ apiInstance.getSigningInfo(validatorPubKey).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **validatorPubKey** | **String**| Bech32 validator public key | 
 
 ### Return type
 
-**Object**
+[**InlineResponse20015**](InlineResponse20015.md)
 
 ### Authorization
 
@@ -48,25 +51,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getSigningInfos"></a>
-# **getSigningInfos**
-> Object getSigningInfos(page, limit)
+
+## getSigningInfos
+
+> InlineResponse20016 getSigningInfos(page, limit)
 
 Get sign info of given all validators
 
 Get sign info of all validators
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.SlashingApi();
-let page = 56; // Number | Page number
-let limit = 56; // Number | Maximum number of items per page
-
+let page = 1; // Number | Page number
+let limit = 5; // Number | Maximum number of items per page
 apiInstance.getSigningInfos(page, limit).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -77,6 +81,7 @@ apiInstance.getSigningInfos(page, limit).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Number**| Page number | 
@@ -84,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse20016**](InlineResponse20016.md)
 
 ### Authorization
 
@@ -92,16 +97,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getSlashingParams"></a>
-# **getSlashingParams**
-> Object getSlashingParams()
+
+## getSlashingParams
+
+> InlineResponse20017 getSlashingParams()
 
 Get the current slashing parameters
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
@@ -115,11 +122,12 @@ apiInstance.getSlashingParams().then((data) => {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-**Object**
+[**InlineResponse20017**](InlineResponse20017.md)
 
 ### Authorization
 
@@ -127,26 +135,27 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="unjailValidator"></a>
-# **unjailValidator**
-> BroadcastTxCommitResult unjailValidator(bodyvalidatorAddr)
+
+## unjailValidator
+
+> BroadcastTxCommitResult unjailValidator(validatorAddr, unjailBody)
 
 Unjail a jailed validator
 
 Send transaction to unjail a jailed validator
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.SlashingApi();
-let body = null; // Object | 
-let validatorAddr = "validatorAddr_example"; // String | Bech32 validator address
-
-apiInstance.unjailValidator(bodyvalidatorAddr).then((data) => {
+let validatorAddr = coinexvaloper1qwl879nx9t6kef4supyazayf7vjhennyh568ys; // String | Bech32 validator address
+let unjailBody = new DexApiNodejs.InlineObject9(); // InlineObject9 | 
+apiInstance.unjailValidator(validatorAddr, unjailBody).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -156,10 +165,11 @@ apiInstance.unjailValidator(bodyvalidatorAddr).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)|  | 
  **validatorAddr** | **String**| Bech32 validator address | 
+ **unjailBody** | [**InlineObject9**](InlineObject9.md)|  | 
 
 ### Return type
 
@@ -171,6 +181,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 

@@ -1,16 +1,19 @@
 # DexApiNodejs.Validator
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**operatorAddress** | [**ValidatorAddress**](ValidatorAddress.md) |  | 
+**operatorAddress** | **String** | bech32 encoded address | 
 **consensusPubkey** | **String** |  | 
 **jailed** | **Boolean** |  | 
 **status** | **Number** |  | 
 **tokens** | **String** |  | 
 **delegatorShares** | **String** |  | 
-**description** | **Object** |  | 
+**description** | [**ValidatorDescription**](ValidatorDescription.md) |  | 
 **unbondingHeight** | **String** |  | 
 **unbondingTime** | **String** |  | 
-**commission** | **Object** |  | 
+**commission** | [**ValidatorCommission**](ValidatorCommission.md) |  | 
 **minSelfDelegation** | **String** |  | 
+
+

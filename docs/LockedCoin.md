@@ -1,6 +1,7 @@
 # DexApiNodejs.LockedCoin
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **coin** | [**Coin**](Coin.md) |  | 
@@ -8,3 +9,5 @@ Name | Type | Description | Notes
 **fromAddress** | **String** |  | [optional] 
 **supervisor** | **String** |  | [optional] 
 **reward** | **String** |  | [optional] 
+
+

@@ -1,6 +1,7 @@
 # DexApiNodejs.CommentRef
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
@@ -8,3 +9,5 @@ Name | Type | Description | Notes
 **rewardToken** | **String** |  | 
 **rewardAmount** | **String** |  | 
 **attitudes** | **[Number]** |  | 
+
+

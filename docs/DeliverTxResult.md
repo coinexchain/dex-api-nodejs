@@ -1,6 +1,7 @@
 # DexApiNodejs.DeliverTxResult
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **Number** |  | [optional] 
@@ -10,3 +11,5 @@ Name | Type | Description | Notes
 **info** | **String** |  | [optional] 
 **log** | **String** |  | [optional] 
 **tags** | [**[KVPair]**](KVPair.md) |  | [optional] 
+
+

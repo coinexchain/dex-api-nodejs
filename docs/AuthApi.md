@@ -1,6 +1,6 @@
 # DexApiNodejs.AuthApi
 
-All URIs are relative to *https://dex-api.coinex.org/*
+All URIs are relative to *https://dex-api.coinex.org*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,19 +8,21 @@ Method | HTTP request | Description
 [**getAuthParams**](AuthApi.md#getAuthParams) | **GET** /auth/parameters | Get the current auth parameters
 [**setReferee**](AuthApi.md#setReferee) | **POST** /auth/accounts/{address}/referee | Set referee for account
 
-<a name="getAccount"></a>
-# **getAccount**
-> Object getAccount(address)
+
+
+## getAccount
+
+> InlineResponse2004 getAccount(address)
 
 Get the account information on blockchain
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.AuthApi();
-let address = "address_example"; // String | Account address
-
+let address = coinex16gdxm24ht2mxtpz9cma6tr6a6d47x63hlq4pxt; // String | Account address
 apiInstance.getAccount(address).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -31,13 +33,14 @@ apiInstance.getAccount(address).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **address** | **String**| Account address | 
 
 ### Return type
 
-**Object**
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 
@@ -45,16 +48,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getAuthParams"></a>
-# **getAuthParams**
-> Object getAuthParams()
+
+## getAuthParams
+
+> InlineResponse20034 getAuthParams()
 
 Get the current auth parameters
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
@@ -68,11 +73,12 @@ apiInstance.getAuthParams().then((data) => {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-**Object**
+[**InlineResponse20034**](InlineResponse20034.md)
 
 ### Authorization
 
@@ -80,24 +86,25 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="setReferee"></a>
-# **setReferee**
-> StdTx setReferee(bodyaddress)
+
+## setReferee
+
+> StdTx setReferee(address, referee)
 
 Set referee for account
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.AuthApi();
-let body = null; // Object | Referee
-let address = "address_example"; // String | Account address in bech32 format
-
-apiInstance.setReferee(bodyaddress).then((data) => {
+let address = coinex16gdxm24ht2mxtpz9cma6tr6a6d47x63hlq4pxt; // String | Account address in bech32 format
+let referee = new DexApiNodejs.InlineObject5(); // InlineObject5 | 
+apiInstance.setReferee(address, referee).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -107,10 +114,11 @@ apiInstance.setReferee(bodyaddress).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| Referee | 
  **address** | **String**| Account address in bech32 format | 
+ **referee** | [**InlineObject5**](InlineObject5.md)|  | 
 
 ### Return type
 
@@ -122,6 +130,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 

@@ -1,6 +1,7 @@
 # DexApiNodejs.RedelegationEntry
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **creationHeight** | **Number** |  | 
@@ -8,3 +9,5 @@ Name | Type | Description | Notes
 **initialBalance** | **String** |  | 
 **sharesDst** | **String** |  | 
 **balance** | **String** |  | 
+
+

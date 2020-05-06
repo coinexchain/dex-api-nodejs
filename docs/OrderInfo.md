@@ -1,6 +1,7 @@
 # DexApiNodejs.OrderInfo
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **sender** | **String** |  | [optional] 
@@ -12,3 +13,5 @@ Name | Type | Description | Notes
 **freeze** | **String** |  | [optional] 
 **dealStock** | **String** |  | [optional] 
 **dealMoney** | **String** |  | [optional] 
+
+

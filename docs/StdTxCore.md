@@ -1,9 +1,12 @@
 # DexApiNodejs.StdTxCore
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**msg** | [**[Msg]**](Msg.md) |  | [optional] 
-**fee** | **Object** |  | 
+**msg** | **[Object]** |  | [optional] 
+**fee** | [**StdTxCoreFee**](StdTxCoreFee.md) |  | 
 **memo** | **String** |  | 
-**signatures** | **[Object]** |  | 
+**signatures** | [**[StdTxCoreSignatures]**](StdTxCoreSignatures.md) |  | 
+
+

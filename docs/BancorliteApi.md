@@ -1,6 +1,6 @@
 # DexApiNodejs.BancorliteApi
 
-All URIs are relative to *https://dex-api.coinex.org/*
+All URIs are relative to *https://dex-api.coinex.org*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,20 +11,22 @@ Method | HTTP request | Description
 [**getBancorInfos**](BancorliteApi.md#getBancorInfos) | **GET** /bancorlite/infos | get all bancor infos
 [**getBancorliteParams**](BancorliteApi.md#getBancorliteParams) | **GET** /bancorlite/parameters | Get the current bancorlite parameters
 
-<a name="bancorCancel"></a>
-# **bancorCancel**
-> StdTx bancorCancel(body)
+
+
+## bancorCancel
+
+> StdTx bancorCancel(bancorCancel)
 
 cancel bancor
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.BancorliteApi();
-let body = null; // Object | cancel bancor
-
-apiInstance.bancorCancel(body).then((data) => {
+let bancorCancel = new DexApiNodejs.InlineObject35(); // InlineObject35 | 
+apiInstance.bancorCancel(bancorCancel).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -34,9 +36,10 @@ apiInstance.bancorCancel(body).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| cancel bancor | 
+ **bancorCancel** | [**InlineObject35**](InlineObject35.md)|  | 
 
 ### Return type
 
@@ -48,23 +51,24 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="bancorInit"></a>
-# **bancorInit**
-> StdTx bancorInit(body)
+
+## bancorInit
+
+> StdTx bancorInit(bancorInit)
 
 create bancor
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.BancorliteApi();
-let body = null; // Object | create bancor
-
-apiInstance.bancorInit(body).then((data) => {
+let bancorInit = new DexApiNodejs.InlineObject33(); // InlineObject33 | 
+apiInstance.bancorInit(bancorInit).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -74,9 +78,10 @@ apiInstance.bancorInit(body).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| create bancor | 
+ **bancorInit** | [**InlineObject33**](InlineObject33.md)|  | 
 
 ### Return type
 
@@ -88,23 +93,24 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="bancorTrade"></a>
-# **bancorTrade**
-> StdTx bancorTrade(body)
+
+## bancorTrade
+
+> StdTx bancorTrade(bancorTrade)
 
 trade with bancor
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.BancorliteApi();
-let body = null; // Object | trade with bancor
-
-apiInstance.bancorTrade(body).then((data) => {
+let bancorTrade = new DexApiNodejs.InlineObject34(); // InlineObject34 | 
+apiInstance.bancorTrade(bancorTrade).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -114,9 +120,10 @@ apiInstance.bancorTrade(body).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| trade with bancor | 
+ **bancorTrade** | [**InlineObject34**](InlineObject34.md)|  | 
 
 ### Return type
 
@@ -128,22 +135,23 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="getBancorInfo"></a>
-# **getBancorInfo**
-> {&#x27;String&#x27;: Object} getBancorInfo(symbol)
+
+## getBancorInfo
+
+> {String: Object} getBancorInfo(symbol)
 
 get the bancor pool info
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.BancorliteApi();
-let symbol = "symbol_example"; // String | stock and money pair
-
+let symbol = btc-cet; // String | stock and money pair
 apiInstance.getBancorInfo(symbol).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -154,13 +162,14 @@ apiInstance.getBancorInfo(symbol).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| stock and money pair | 
 
 ### Return type
 
-**{&#x27;String&#x27;: Object}**
+**{String: Object}**
 
 ### Authorization
 
@@ -168,16 +177,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getBancorInfos"></a>
-# **getBancorInfos**
-> Object getBancorInfos()
+
+## getBancorInfos
+
+> InlineResponse20052 getBancorInfos()
 
 get all bancor infos
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
@@ -191,11 +202,12 @@ apiInstance.getBancorInfos().then((data) => {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-**Object**
+[**InlineResponse20052**](InlineResponse20052.md)
 
 ### Authorization
 
@@ -203,16 +215,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getBancorliteParams"></a>
-# **getBancorliteParams**
-> Object getBancorliteParams()
+
+## getBancorliteParams
+
+> InlineResponse20051 getBancorliteParams()
 
 Get the current bancorlite parameters
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
@@ -226,11 +240,12 @@ apiInstance.getBancorliteParams().then((data) => {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-**Object**
+[**InlineResponse20051**](InlineResponse20051.md)
 
 ### Authorization
 
@@ -238,6 +253,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 

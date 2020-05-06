@@ -1,6 +1,6 @@
 # DexApiNodejs.CommentApi
 
-All URIs are relative to *https://dex-api.coinex.org/*
+All URIs are relative to *https://dex-api.coinex.org*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,20 +8,22 @@ Method | HTTP request | Description
 [**newThread**](CommentApi.md#newThread) | **POST** /comment/new-thread | Post a new comment to open a new thread
 [**rewardComments**](CommentApi.md#rewardComments) | **POST** /comment/reward-comments | reward some comments with coins
 
-<a name="followupComment"></a>
-# **followupComment**
-> StdTx followupComment(body)
+
+
+## followupComment
+
+> StdTx followupComment(followupCommentReq)
 
 Post a follow-up comment under some thread
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.CommentApi();
-let body = null; // Object | Post a follow-up comment
-
-apiInstance.followupComment(body).then((data) => {
+let followupCommentReq = new DexApiNodejs.InlineObject31(); // InlineObject31 | 
+apiInstance.followupComment(followupCommentReq).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -31,9 +33,10 @@ apiInstance.followupComment(body).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| Post a follow-up comment | 
+ **followupCommentReq** | [**InlineObject31**](InlineObject31.md)|  | 
 
 ### Return type
 
@@ -45,23 +48,24 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="newThread"></a>
-# **newThread**
-> StdTx newThread(body)
+
+## newThread
+
+> StdTx newThread(newThreadReq)
 
 Post a new comment to open a new thread
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.CommentApi();
-let body = null; // Object | open a new thread
-
-apiInstance.newThread(body).then((data) => {
+let newThreadReq = new DexApiNodejs.InlineObject30(); // InlineObject30 | 
+apiInstance.newThread(newThreadReq).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -71,9 +75,10 @@ apiInstance.newThread(body).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| open a new thread | 
+ **newThreadReq** | [**InlineObject30**](InlineObject30.md)|  | 
 
 ### Return type
 
@@ -85,23 +90,24 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="rewardComments"></a>
-# **rewardComments**
-> StdTx rewardComments(body)
+
+## rewardComments
+
+> StdTx rewardComments(rewardCommentsReq)
 
 reward some comments with coins
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.CommentApi();
-let body = null; // Object | reward some comments
-
-apiInstance.rewardComments(body).then((data) => {
+let rewardCommentsReq = new DexApiNodejs.InlineObject32(); // InlineObject32 | 
+apiInstance.rewardComments(rewardCommentsReq).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -111,9 +117,10 @@ apiInstance.rewardComments(body).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Object**](Object.md)| reward some comments | 
+ **rewardCommentsReq** | [**InlineObject32**](InlineObject32.md)|  | 
 
 ### Return type
 
@@ -125,6 +132,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 

@@ -1,18 +1,21 @@
 # DexApiNodejs.IncentiveApi
 
-All URIs are relative to *https://dex-api.coinex.org/*
+All URIs are relative to *https://dex-api.coinex.org*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getIncentiveParams**](IncentiveApi.md#getIncentiveParams) | **GET** /incentive/parameters | Get the current incentive parameters
 
-<a name="getIncentiveParams"></a>
-# **getIncentiveParams**
-> Object getIncentiveParams()
+
+
+## getIncentiveParams
+
+> InlineResponse20036 getIncentiveParams()
 
 Get the current incentive parameters
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
@@ -26,11 +29,12 @@ apiInstance.getIncentiveParams().then((data) => {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-**Object**
+[**InlineResponse20036**](InlineResponse20036.md)
 
 ### Authorization
 
@@ -38,6 +42,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 

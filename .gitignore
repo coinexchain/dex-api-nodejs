@@ -1,3 +1,5 @@
+.idea/
 /git_push.sh
 /mocha.opts
-.idea
+/node_modules/
+/dist/

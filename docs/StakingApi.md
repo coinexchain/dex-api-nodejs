@@ -1,6 +1,6 @@
 # DexApiNodejs.StakingApi
 
-All URIs are relative to *https://dex-api.coinex.org/*
+All URIs are relative to *https://dex-api.coinex.org*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,19 +22,21 @@ Method | HTTP request | Description
 [**submitRedelegation**](StakingApi.md#submitRedelegation) | **POST** /staking/delegators/{delegatorAddr}/redelegations | Submit a redelegation
 [**undelegate**](StakingApi.md#undelegate) | **POST** /staking/delegators/{delegatorAddr}/unbonding_delegations | Submit an unbonding delegation
 
-<a name="getDelegations"></a>
-# **getDelegations**
-> Object getDelegations(delegatorAddr)
+
+
+## getDelegations
+
+> InlineResponse2005 getDelegations(delegatorAddr)
 
 Get all delegations from a delegator
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.StakingApi();
-let delegatorAddr = "delegatorAddr_example"; // String | Bech32 AccAddress of Delegator
-
+let delegatorAddr = coinex167w96tdvmazakdwkw2u57227eduula2cy572lf; // String | Bech32 AccAddress of Delegator
 apiInstance.getDelegations(delegatorAddr).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -45,13 +47,14 @@ apiInstance.getDelegations(delegatorAddr).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delegatorAddr** | **String**| Bech32 AccAddress of Delegator | 
 
 ### Return type
 
-**Object**
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -59,22 +62,23 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getDelegationsOfValidator"></a>
-# **getDelegationsOfValidator**
-> Object getDelegationsOfValidator(validatorAddr)
+
+## getDelegationsOfValidator
+
+> InlineResponse2005 getDelegationsOfValidator(validatorAddr)
 
 Get all delegations from a validator
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.StakingApi();
-let validatorAddr = "validatorAddr_example"; // String | Bech32 OperatorAddress of validator
-
+let validatorAddr = coinexvaloper1qwl879nx9t6kef4supyazayf7vjhennyh568ys; // String | Bech32 OperatorAddress of validator
 apiInstance.getDelegationsOfValidator(validatorAddr).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -85,13 +89,14 @@ apiInstance.getDelegationsOfValidator(validatorAddr).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **validatorAddr** | **String**| Bech32 OperatorAddress of validator | 
 
 ### Return type
 
-**Object**
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -99,23 +104,24 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getDelegationsToValidator"></a>
-# **getDelegationsToValidator**
-> Object getDelegationsToValidator(delegatorAddr, validatorAddr)
+
+## getDelegationsToValidator
+
+> InlineResponse2006 getDelegationsToValidator(delegatorAddr, validatorAddr)
 
 Query the current delegation between a delegator and a validator
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.StakingApi();
-let delegatorAddr = "delegatorAddr_example"; // String | Bech32 AccAddress of Delegator
-let validatorAddr = "validatorAddr_example"; // String | Bech32 OperatorAddress of validator
-
+let delegatorAddr = coinex167w96tdvmazakdwkw2u57227eduula2cy572lf; // String | Bech32 AccAddress of Delegator
+let validatorAddr = coinexvaloper1qwl879nx9t6kef4supyazayf7vjhennyh568ys; // String | Bech32 OperatorAddress of validator
 apiInstance.getDelegationsToValidator(delegatorAddr, validatorAddr).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -126,6 +132,7 @@ apiInstance.getDelegationsToValidator(delegatorAddr, validatorAddr).then((data) 
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delegatorAddr** | **String**| Bech32 AccAddress of Delegator | 
@@ -133,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 
@@ -141,22 +148,23 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getDelegatorTxs"></a>
-# **getDelegatorTxs**
+
+## getDelegatorTxs
+
 > [PaginatedQueryTxs] getDelegatorTxs(delegatorAddr)
 
 Get all staking txs (i.e msgs) from a delegator
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.StakingApi();
-let delegatorAddr = "delegatorAddr_example"; // String | Bech32 AccAddress of Delegator
-
+let delegatorAddr = coinex167w96tdvmazakdwkw2u57227eduula2cy572lf; // String | Bech32 AccAddress of Delegator
 apiInstance.getDelegatorTxs(delegatorAddr).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -166,6 +174,7 @@ apiInstance.getDelegatorTxs(delegatorAddr).then((data) => {
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -181,21 +190,23 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getRedelegations"></a>
-# **getRedelegations**
-> Object getRedelegations(opts)
+
+## getRedelegations
+
+> InlineResponse2009 getRedelegations(opts)
 
 Get all redelegations (filter by query params)
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.StakingApi();
-let opts = { 
+let opts = {
   'delegator': "delegator_example", // String | Bech32 AccAddress of Delegator
   'validatorFrom': "validatorFrom_example", // String | Bech32 ValAddress of SrcValidator
   'validatorTo': "validatorTo_example" // String | Bech32 ValAddress of DstValidator
@@ -210,6 +221,7 @@ apiInstance.getRedelegations(opts).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delegator** | **String**| Bech32 AccAddress of Delegator | [optional] 
@@ -218,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse2009**](InlineResponse2009.md)
 
 ### Authorization
 
@@ -226,16 +238,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getStakingParameters"></a>
-# **getStakingParameters**
-> Object getStakingParameters()
+
+## getStakingParameters
+
+> InlineResponse20014 getStakingParameters()
 
 Get the current staking parameter values
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
@@ -249,11 +263,12 @@ apiInstance.getStakingParameters().then((data) => {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-**Object**
+[**InlineResponse20014**](InlineResponse20014.md)
 
 ### Authorization
 
@@ -261,16 +276,18 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getStakingPool"></a>
-# **getStakingPool**
-> Object getStakingPool()
+
+## getStakingPool
+
+> InlineResponse20013 getStakingPool()
 
 Get the current state of the staking pool
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
@@ -284,11 +301,12 @@ apiInstance.getStakingPool().then((data) => {
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
 
-**Object**
+[**InlineResponse20013**](InlineResponse20013.md)
 
 ### Authorization
 
@@ -296,23 +314,24 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getUndelegationsBetween"></a>
-# **getUndelegationsBetween**
-> Object getUndelegationsBetween(delegatorAddr, validatorAddr)
+
+## getUndelegationsBetween
+
+> InlineResponse2008 getUndelegationsBetween(delegatorAddr, validatorAddr)
 
 Query all unbonding delegations between a delegator and a validator
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.StakingApi();
-let delegatorAddr = "delegatorAddr_example"; // String | Bech32 AccAddress of Delegator
-let validatorAddr = "validatorAddr_example"; // String | Bech32 OperatorAddress of validator
-
+let delegatorAddr = coinex167w96tdvmazakdwkw2u57227eduula2cy572lf; // String | Bech32 AccAddress of Delegator
+let validatorAddr = coinexvaloper1qwl879nx9t6kef4supyazayf7vjhennyh568ys; // String | Bech32 OperatorAddress of validator
 apiInstance.getUndelegationsBetween(delegatorAddr, validatorAddr).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -323,6 +342,7 @@ apiInstance.getUndelegationsBetween(delegatorAddr, validatorAddr).then((data) =>
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delegatorAddr** | **String**| Bech32 AccAddress of Delegator | 
@@ -330,7 +350,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 
@@ -338,22 +358,23 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getUndelegationsOfDelegator"></a>
-# **getUndelegationsOfDelegator**
-> Object getUndelegationsOfDelegator(delegatorAddr)
+
+## getUndelegationsOfDelegator
+
+> InlineResponse2007 getUndelegationsOfDelegator(delegatorAddr)
 
 Get all unbonding delegations from a delegator
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.StakingApi();
-let delegatorAddr = "delegatorAddr_example"; // String | Bech32 AccAddress of Delegator
-
+let delegatorAddr = coinex167w96tdvmazakdwkw2u57227eduula2cy572lf; // String | Bech32 AccAddress of Delegator
 apiInstance.getUndelegationsOfDelegator(delegatorAddr).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -364,13 +385,14 @@ apiInstance.getUndelegationsOfDelegator(delegatorAddr).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delegatorAddr** | **String**| Bech32 AccAddress of Delegator | 
 
 ### Return type
 
-**Object**
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -378,22 +400,23 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getUndelegationsOfValidator"></a>
-# **getUndelegationsOfValidator**
-> Object getUndelegationsOfValidator(validatorAddr)
+
+## getUndelegationsOfValidator
+
+> InlineResponse20012 getUndelegationsOfValidator(validatorAddr)
 
 Get all unbonding delegations from a validator
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.StakingApi();
-let validatorAddr = "validatorAddr_example"; // String | Bech32 OperatorAddress of validator
-
+let validatorAddr = coinexvaloper1qwl879nx9t6kef4supyazayf7vjhennyh568ys; // String | Bech32 OperatorAddress of validator
 apiInstance.getUndelegationsOfValidator(validatorAddr).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -404,13 +427,14 @@ apiInstance.getUndelegationsOfValidator(validatorAddr).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **validatorAddr** | **String**| Bech32 OperatorAddress of validator | 
 
 ### Return type
 
-**Object**
+[**InlineResponse20012**](InlineResponse20012.md)
 
 ### Authorization
 
@@ -418,22 +442,23 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getValidator"></a>
-# **getValidator**
-> Object getValidator(validatorAddr)
+
+## getValidator
+
+> InlineResponse20011 getValidator(validatorAddr)
 
 Query the information from a single validator
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.StakingApi();
-let validatorAddr = "validatorAddr_example"; // String | Bech32 OperatorAddress of validator
-
+let validatorAddr = coinexvaloper1qwl879nx9t6kef4supyazayf7vjhennyh568ys; // String | Bech32 OperatorAddress of validator
 apiInstance.getValidator(validatorAddr).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -444,13 +469,14 @@ apiInstance.getValidator(validatorAddr).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **validatorAddr** | **String**| Bech32 OperatorAddress of validator | 
 
 ### Return type
 
-**Object**
+[**InlineResponse20011**](InlineResponse20011.md)
 
 ### Authorization
 
@@ -458,23 +484,24 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getValidatorOfDelegator"></a>
-# **getValidatorOfDelegator**
-> Object getValidatorOfDelegator(delegatorAddr, validatorAddr)
+
+## getValidatorOfDelegator
+
+> InlineResponse20011 getValidatorOfDelegator(delegatorAddr, validatorAddr)
 
 Query a validator that a delegator is bonded to
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.StakingApi();
-let delegatorAddr = "delegatorAddr_example"; // String | Bech32 AccAddress of Delegator
-let validatorAddr = "validatorAddr_example"; // String | Bech32 ValAddress of Delegator
-
+let delegatorAddr = coinex167w96tdvmazakdwkw2u57227eduula2cy572lf; // String | Bech32 AccAddress of Delegator
+let validatorAddr = coinexvaloper1qwl879nx9t6kef4supyazayf7vjhennyh568ys; // String | Bech32 ValAddress of Delegator
 apiInstance.getValidatorOfDelegator(delegatorAddr, validatorAddr).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -485,6 +512,7 @@ apiInstance.getValidatorOfDelegator(delegatorAddr, validatorAddr).then((data) =>
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delegatorAddr** | **String**| Bech32 AccAddress of Delegator | 
@@ -492,7 +520,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse20011**](InlineResponse20011.md)
 
 ### Authorization
 
@@ -500,24 +528,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getValidators"></a>
-# **getValidators**
-> Object getValidators(opts)
+
+## getValidators
+
+> InlineResponse20010 getValidators(opts)
 
 Get all validator candidates. By default it returns only the bonded validators.
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.StakingApi();
-let opts = { 
-  'status': "status_example", // String | The validator bond status. Must be either 'bonded', 'unbonded', or 'unbonding'.
-  'page': 56, // Number | The page number.
-  'limit': 56 // Number | The maximum number of items per page.
+let opts = {
+  'status': bonded, // String | The validator bond status. Must be either 'bonded', 'unbonded', or 'unbonding'.
+  'page': 1, // Number | The page number.
+  'limit': 1 // Number | The maximum number of items per page.
 };
 apiInstance.getValidators(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -529,15 +559,16 @@ apiInstance.getValidators(opts).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | **String**| The validator bond status. Must be either &#x27;bonded&#x27;, &#x27;unbonded&#x27;, or &#x27;unbonding&#x27;. | [optional] 
+ **status** | **String**| The validator bond status. Must be either &#39;bonded&#39;, &#39;unbonded&#39;, or &#39;unbonding&#39;. | [optional] 
  **page** | **Number**| The page number. | [optional] 
  **limit** | **Number**| The maximum number of items per page. | [optional] 
 
 ### Return type
 
-**Object**
+[**InlineResponse20010**](InlineResponse20010.md)
 
 ### Authorization
 
@@ -545,22 +576,23 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="getValidatorsOfDelegator"></a>
-# **getValidatorsOfDelegator**
-> Object getValidatorsOfDelegator(delegatorAddr)
+
+## getValidatorsOfDelegator
+
+> InlineResponse20010 getValidatorsOfDelegator(delegatorAddr)
 
 Query all validators that a delegator is bonded to
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.StakingApi();
-let delegatorAddr = "delegatorAddr_example"; // String | Bech32 AccAddress of Delegator
-
+let delegatorAddr = coinex167w96tdvmazakdwkw2u57227eduula2cy572lf; // String | Bech32 AccAddress of Delegator
 apiInstance.getValidatorsOfDelegator(delegatorAddr).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -571,13 +603,14 @@ apiInstance.getValidatorsOfDelegator(delegatorAddr).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delegatorAddr** | **String**| Bech32 AccAddress of Delegator | 
 
 ### Return type
 
-**Object**
+[**InlineResponse20010**](InlineResponse20010.md)
 
 ### Authorization
 
@@ -585,23 +618,27 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
-<a name="submitDelegation"></a>
-# **submitDelegation**
-> BroadcastTxCommitResult submitDelegation(delegatorAddr)
+
+## submitDelegation
+
+> BroadcastTxCommitResult submitDelegation(delegatorAddr, opts)
 
 Submit delegation
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.StakingApi();
 let delegatorAddr = "delegatorAddr_example"; // String | Bech32 AccAddress of Delegator
-
-apiInstance.submitDelegation(delegatorAddr).then((data) => {
+let opts = {
+  'delegation': new DexApiNodejs.InlineObject6() // InlineObject6 | 
+};
+apiInstance.submitDelegation(delegatorAddr, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -611,10 +648,11 @@ apiInstance.submitDelegation(delegatorAddr).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delegatorAddr** | **String**| Bech32 AccAddress of Delegator | 
- **body** | [**Object**](Object.md)| submit delegation to provided validator | [optional] 
+ **delegation** | [**InlineObject6**](InlineObject6.md)|  | [optional] 
 
 ### Return type
 
@@ -626,23 +664,27 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="submitRedelegation"></a>
-# **submitRedelegation**
-> StdTx submitRedelegation(delegatorAddr)
+
+## submitRedelegation
+
+> StdTx submitRedelegation(delegatorAddr, opts)
 
 Submit a redelegation
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.StakingApi();
-let delegatorAddr = "delegatorAddr_example"; // String | Bech32 AccAddress of Delegator
-
-apiInstance.submitRedelegation(delegatorAddr).then((data) => {
+let delegatorAddr = coinex167w96tdvmazakdwkw2u57227eduula2cy572lf; // String | Bech32 AccAddress of Delegator
+let opts = {
+  'delegation': new DexApiNodejs.InlineObject8() // InlineObject8 | 
+};
+apiInstance.submitRedelegation(delegatorAddr, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -652,10 +694,11 @@ apiInstance.submitRedelegation(delegatorAddr).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delegatorAddr** | **String**| Bech32 AccAddress of Delegator | 
- **body** | [**Object**](Object.md)| The sender and tx information | [optional] 
+ **delegation** | [**InlineObject8**](InlineObject8.md)|  | [optional] 
 
 ### Return type
 
@@ -667,23 +710,27 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="undelegate"></a>
-# **undelegate**
-> BroadcastTxCommitResult undelegate(delegatorAddr)
+
+## undelegate
+
+> BroadcastTxCommitResult undelegate(delegatorAddr, opts)
 
 Submit an unbonding delegation
 
 ### Example
+
 ```javascript
 import DexApiNodejs from 'dex-api-nodejs';
 
 let apiInstance = new DexApiNodejs.StakingApi();
 let delegatorAddr = "delegatorAddr_example"; // String | Bech32 AccAddress of Delegator
-
-apiInstance.undelegate(delegatorAddr).then((data) => {
+let opts = {
+  'delegation': new DexApiNodejs.InlineObject7() // InlineObject7 | 
+};
+apiInstance.undelegate(delegatorAddr, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -693,10 +740,11 @@ apiInstance.undelegate(delegatorAddr).then((data) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **delegatorAddr** | **String**| Bech32 AccAddress of Delegator | 
- **body** | [**Object**](Object.md)| The password of the account to remove from the KMS | [optional] 
+ **delegation** | [**InlineObject7**](InlineObject7.md)|  | [optional] 
 
 ### Return type
 
@@ -708,6 +756,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
