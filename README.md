@@ -28,6 +28,44 @@ Finally, you need to build the module:
 npm run build
 ```
 
+## Run example
+
+First install dependencies:
+
+```shell
+npm install
+```
+
+Then change node_module/ffi-napi/lib/librarys EXT
+
+```javascript
+const EXT = Library.EXT = {
+  'linux':  '.so',
+  'linux2': '.so',
+  'sunos':  '.so',
+  'solaris':'.so',
+  'freebsd':'.so',
+  'openbsd':'.so',
+  // 'darwin': '.dylib',
+  // 'mac':    '.dylib',
+  'darwin': '.so', // .dylib -> .so
+  'mac':    '.so', // .dylib -> .so
+  'win32':  '.dll'
+}[process.platform];
+```
+
+Next, run babel (es6 -> es5):
+
+```shell
+npm run build
+```
+
+Finally, run example:
+
+```shell
+npm start
+```
+
 ##### Local development
 
 To use the library locally without publishing to a remote npm registry, first install the dependencies by changing into the directory containing `package.json` (and this README). Let's call this `JAVASCRIPT_CLIENT_DIR`. Then run:
