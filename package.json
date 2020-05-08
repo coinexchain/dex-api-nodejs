@@ -14,6 +14,8 @@
   },
   "dependencies": {
     "@babel/cli": "^7.0.0",
+    "ffi-napi": "^2.5.0",
+    "ref-napi": "^2.0.0",
     "superagent": "3.7.0"
   },
   "devDependencies": {

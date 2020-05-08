@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import InlineObject2 from '../model/InlineObject2';
+import Account from '../model/Account';
 import InlineObject3 from '../model/InlineObject3';
 import InlineObject4 from '../model/InlineObject4';
 import InlineResponse20035 from '../model/InlineResponse20035';
@@ -127,7 +127,7 @@ export default class BankApi {
     /**
      * Send coins from one account to another
      * @param {String} address Account address in bech32 format
-     * @param {module:model/InlineObject2} account 
+     * @param {module:model/Account} account
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StdTx} and HTTP response
      */
     sendCoinsWithHttpInfo(address, account) {
@@ -165,7 +165,7 @@ export default class BankApi {
     /**
      * Send coins from one account to another
      * @param {String} address Account address in bech32 format
-     * @param {module:model/InlineObject2} account 
+     * @param {module:model/Account} account
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StdTx}
      */
     sendCoins(address, account) {

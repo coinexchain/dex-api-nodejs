@@ -51,7 +51,7 @@ import InlineObject16 from './model/InlineObject16';
 import InlineObject17 from './model/InlineObject17';
 import InlineObject18 from './model/InlineObject18';
 import InlineObject19 from './model/InlineObject19';
-import InlineObject2 from './model/InlineObject2';
+import Account from './model/Account';
 import InlineObject20 from './model/InlineObject20';
 import InlineObject21 from './model/InlineObject21';
 import InlineObject22 from './model/InlineObject22';
@@ -477,7 +477,7 @@ export {
      * The InlineObject2 model constructor.
      * @property {module:model/InlineObject2}
      */
-    InlineObject2,
+    Account,
 
     /**
      * The InlineObject20 model constructor.

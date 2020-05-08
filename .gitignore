@@ -3,3 +3,4 @@
 /mocha.opts
 /node_modules/
 /dist/
+/tmp/
