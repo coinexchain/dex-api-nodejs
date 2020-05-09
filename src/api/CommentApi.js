@@ -16,6 +16,7 @@ import ApiClient from "../ApiClient";
 import InlineObject30 from '../model/InlineObject30';
 import InlineObject31 from '../model/InlineObject31';
 import InlineObject32 from '../model/InlineObject32';
+import InlineResponse20063 from '../model/InlineResponse20063';
 import StdTx from '../model/StdTx';
 
 /**
@@ -122,6 +123,75 @@ export default class CommentApi {
      */
     newThread(newThreadReq) {
       return this.newThreadWithHttpInfo(newThreadReq)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Query token comment
+     * Query all comments about given token until to time
+     * @param {String} token Symbol
+     * @param {Number} time Unix timestamp
+     * @param {Number} sid Sequence id
+     * @param {Number} count Querier comment count limited to 1024
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20063} and HTTP response
+     */
+    queryCommentWithHttpInfo(token, time, sid, count) {
+      let postBody = null;
+      // verify the required parameter 'token' is set
+      if (token === undefined || token === null) {
+        throw new Error("Missing the required parameter 'token' when calling queryComment");
+      }
+      // verify the required parameter 'time' is set
+      if (time === undefined || time === null) {
+        throw new Error("Missing the required parameter 'time' when calling queryComment");
+      }
+      // verify the required parameter 'sid' is set
+      if (sid === undefined || sid === null) {
+        throw new Error("Missing the required parameter 'sid' when calling queryComment");
+      }
+      // verify the required parameter 'count' is set
+      if (count === undefined || count === null) {
+        throw new Error("Missing the required parameter 'count' when calling queryComment");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'token': token,
+        'time': time,
+        'sid': sid,
+        'count': count
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse20063;
+      return this.apiClient.callApi(
+        '/comment/comments', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Query token comment
+     * Query all comments about given token until to time
+     * @param {String} token Symbol
+     * @param {Number} time Unix timestamp
+     * @param {Number} sid Sequence id
+     * @param {Number} count Querier comment count limited to 1024
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20063}
+     */
+    queryComment(token, time, sid, count) {
+      return this.queryCommentWithHttpInfo(token, time, sid, count)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

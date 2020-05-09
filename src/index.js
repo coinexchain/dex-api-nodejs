@@ -15,6 +15,7 @@
 import ApiClient from './ApiClient';
 import Addresses from './model/Addresses';
 import BancorInfo from './model/BancorInfo';
+import BancorTrade from './model/BancorTrade';
 import BaseMarket from './model/BaseMarket';
 import BaseReq from './model/BaseReq';
 import Block from './model/Block';
@@ -31,14 +32,20 @@ import BroadcastTxCommitResult from './model/BroadcastTxCommitResult';
 import BroadcastTxCommitResultAttributes from './model/BroadcastTxCommitResultAttributes';
 import BroadcastTxCommitResultEvents from './model/BroadcastTxCommitResultEvents';
 import BroadcastTxCommitResultLogs from './model/BroadcastTxCommitResultLogs';
+import CancelOrderInfo from './model/CancelOrderInfo';
+import CandleStick from './model/CandleStick';
 import CheckTxResult from './model/CheckTxResult';
 import Coin from './model/Coin';
+import Comment from './model/Comment';
 import CommentRef from './model/CommentRef';
+import CreateOrderInfo from './model/CreateOrderInfo';
 import Delegation from './model/Delegation';
 import DelegationDelegatorReward from './model/DelegationDelegatorReward';
 import DelegatorTotalRewards from './model/DelegatorTotalRewards';
 import DeliverTxResult from './model/DeliverTxResult';
 import Deposit from './model/Deposit';
+import Donation from './model/Donation';
+import FillOrderInfo from './model/FillOrderInfo';
 import InlineObject from './model/InlineObject';
 import InlineObject1 from './model/InlineObject1';
 import InlineObject10 from './model/InlineObject10';
@@ -51,7 +58,7 @@ import InlineObject16 from './model/InlineObject16';
 import InlineObject17 from './model/InlineObject17';
 import InlineObject18 from './model/InlineObject18';
 import InlineObject19 from './model/InlineObject19';
-import Account from './model/Account';
+import InlineObject2 from './model/InlineObject2';
 import InlineObject20 from './model/InlineObject20';
 import InlineObject21 from './model/InlineObject21';
 import InlineObject22 from './model/InlineObject22';
@@ -143,7 +150,19 @@ import InlineResponse20050Result from './model/InlineResponse20050Result';
 import InlineResponse20051 from './model/InlineResponse20051';
 import InlineResponse20051Result from './model/InlineResponse20051Result';
 import InlineResponse20052 from './model/InlineResponse20052';
+import InlineResponse20053 from './model/InlineResponse20053';
+import InlineResponse20054 from './model/InlineResponse20054';
+import InlineResponse20055 from './model/InlineResponse20055';
+import InlineResponse20056 from './model/InlineResponse20056';
+import InlineResponse20057 from './model/InlineResponse20057';
+import InlineResponse20058 from './model/InlineResponse20058';
+import InlineResponse20059 from './model/InlineResponse20059';
 import InlineResponse2006 from './model/InlineResponse2006';
+import InlineResponse20060 from './model/InlineResponse20060';
+import InlineResponse20061 from './model/InlineResponse20061';
+import InlineResponse20062 from './model/InlineResponse20062';
+import InlineResponse20063 from './model/InlineResponse20063';
+import InlineResponse20064 from './model/InlineResponse20064';
 import InlineResponse2007 from './model/InlineResponse2007';
 import InlineResponse2008 from './model/InlineResponse2008';
 import InlineResponse2009 from './model/InlineResponse2009';
@@ -154,6 +173,7 @@ import InlineResponse200NodeInfoProtocolVersion from './model/InlineResponse200N
 import IssueToken from './model/IssueToken';
 import KVPair from './model/KVPair';
 import KeyOutput from './model/KeyOutput';
+import Locked from './model/Locked';
 import LockedCoin from './model/LockedCoin';
 import MarketInfo from './model/MarketInfo';
 import MarketInfoAllOf from './model/MarketInfoAllOf';
@@ -162,11 +182,13 @@ import OrderInfo from './model/OrderInfo';
 import OrderInfoAllOf from './model/OrderInfoAllOf';
 import PaginatedQueryTxs from './model/PaginatedQueryTxs';
 import ParamChange from './model/ParamChange';
+import PricePoint from './model/PricePoint';
 import Proposer from './model/Proposer';
 import PublicKey from './model/PublicKey';
 import Redelegation from './model/Redelegation';
 import RedelegationEntry from './model/RedelegationEntry';
 import SigningInfo from './model/SigningInfo';
+import Slash from './model/Slash';
 import StdTx from './model/StdTx';
 import StdTxCore from './model/StdTxCore';
 import StdTxCoreFee from './model/StdTxCoreFee';
@@ -178,12 +200,20 @@ import TendermintValidator from './model/TendermintValidator';
 import TextProposal from './model/TextProposal';
 import TextProposalContent from './model/TextProposalContent';
 import TextProposalContentValue from './model/TextProposalContentValue';
+import Tickers from './model/Tickers';
 import Token from './model/Token';
 import TokenValue from './model/TokenValue';
+import TransferRecord from './model/TransferRecord';
+import Tx from './model/Tx';
 import TxQuery from './model/TxQuery';
 import TxQueryResult from './model/TxQueryResult';
+import Unbonding from './model/Unbonding';
 import UnbondingDelegationPair from './model/UnbondingDelegationPair';
 import UnbondingEntries from './model/UnbondingEntries';
+import Unlock from './model/Unlock';
+import UserOrder from './model/UserOrder';
+import UserOrderCancelOrderInfo from './model/UserOrderCancelOrderInfo';
+import UserOrderCreateOrderInfo from './model/UserOrderCreateOrderInfo';
 import Validator from './model/Validator';
 import ValidatorCommission from './model/ValidatorCommission';
 import ValidatorCommissionCommissionRates from './model/ValidatorCommissionCommissionRates';
@@ -194,17 +224,22 @@ import Whitelist from './model/Whitelist';
 import AliasApi from './api/AliasApi';
 import AssetApi from './api/AssetApi';
 import AuthApi from './api/AuthApi';
+import BancorApi from './api/BancorApi';
 import BancorliteApi from './api/BancorliteApi';
 import BankApi from './api/BankApi';
 import CommentApi from './api/CommentApi';
 import DistributionApi from './api/DistributionApi';
+import ExpiryApi from './api/ExpiryApi';
 import GovernanceApi from './api/GovernanceApi';
 import IncentiveApi from './api/IncentiveApi';
 import MarketApi from './api/MarketApi';
+import MiscApi from './api/MiscApi';
+import SlashApi from './api/SlashApi';
 import SlashingApi from './api/SlashingApi';
 import StakingApi from './api/StakingApi';
 import TendermintApi from './api/TendermintApi';
 import TransactionsApi from './api/TransactionsApi';
+import TxApi from './api/TxApi';
 
 
 /**
@@ -256,6 +291,12 @@ export {
      * @property {module:model/BancorInfo}
      */
     BancorInfo,
+
+    /**
+     * The BancorTrade model constructor.
+     * @property {module:model/BancorTrade}
+     */
+    BancorTrade,
 
     /**
      * The BaseMarket model constructor.
@@ -354,6 +395,18 @@ export {
     BroadcastTxCommitResultLogs,
 
     /**
+     * The CancelOrderInfo model constructor.
+     * @property {module:model/CancelOrderInfo}
+     */
+    CancelOrderInfo,
+
+    /**
+     * The CandleStick model constructor.
+     * @property {module:model/CandleStick}
+     */
+    CandleStick,
+
+    /**
      * The CheckTxResult model constructor.
      * @property {module:model/CheckTxResult}
      */
@@ -366,10 +419,22 @@ export {
     Coin,
 
     /**
+     * The Comment model constructor.
+     * @property {module:model/Comment}
+     */
+    Comment,
+
+    /**
      * The CommentRef model constructor.
      * @property {module:model/CommentRef}
      */
     CommentRef,
+
+    /**
+     * The CreateOrderInfo model constructor.
+     * @property {module:model/CreateOrderInfo}
+     */
+    CreateOrderInfo,
 
     /**
      * The Delegation model constructor.
@@ -400,6 +465,18 @@ export {
      * @property {module:model/Deposit}
      */
     Deposit,
+
+    /**
+     * The Donation model constructor.
+     * @property {module:model/Donation}
+     */
+    Donation,
+
+    /**
+     * The FillOrderInfo model constructor.
+     * @property {module:model/FillOrderInfo}
+     */
+    FillOrderInfo,
 
     /**
      * The InlineObject model constructor.
@@ -477,7 +554,7 @@ export {
      * The InlineObject2 model constructor.
      * @property {module:model/InlineObject2}
      */
-    Account,
+    InlineObject2,
 
     /**
      * The InlineObject20 model constructor.
@@ -1026,10 +1103,82 @@ export {
     InlineResponse20052,
 
     /**
+     * The InlineResponse20053 model constructor.
+     * @property {module:model/InlineResponse20053}
+     */
+    InlineResponse20053,
+
+    /**
+     * The InlineResponse20054 model constructor.
+     * @property {module:model/InlineResponse20054}
+     */
+    InlineResponse20054,
+
+    /**
+     * The InlineResponse20055 model constructor.
+     * @property {module:model/InlineResponse20055}
+     */
+    InlineResponse20055,
+
+    /**
+     * The InlineResponse20056 model constructor.
+     * @property {module:model/InlineResponse20056}
+     */
+    InlineResponse20056,
+
+    /**
+     * The InlineResponse20057 model constructor.
+     * @property {module:model/InlineResponse20057}
+     */
+    InlineResponse20057,
+
+    /**
+     * The InlineResponse20058 model constructor.
+     * @property {module:model/InlineResponse20058}
+     */
+    InlineResponse20058,
+
+    /**
+     * The InlineResponse20059 model constructor.
+     * @property {module:model/InlineResponse20059}
+     */
+    InlineResponse20059,
+
+    /**
      * The InlineResponse2006 model constructor.
      * @property {module:model/InlineResponse2006}
      */
     InlineResponse2006,
+
+    /**
+     * The InlineResponse20060 model constructor.
+     * @property {module:model/InlineResponse20060}
+     */
+    InlineResponse20060,
+
+    /**
+     * The InlineResponse20061 model constructor.
+     * @property {module:model/InlineResponse20061}
+     */
+    InlineResponse20061,
+
+    /**
+     * The InlineResponse20062 model constructor.
+     * @property {module:model/InlineResponse20062}
+     */
+    InlineResponse20062,
+
+    /**
+     * The InlineResponse20063 model constructor.
+     * @property {module:model/InlineResponse20063}
+     */
+    InlineResponse20063,
+
+    /**
+     * The InlineResponse20064 model constructor.
+     * @property {module:model/InlineResponse20064}
+     */
+    InlineResponse20064,
 
     /**
      * The InlineResponse2007 model constructor.
@@ -1092,6 +1241,12 @@ export {
     KeyOutput,
 
     /**
+     * The Locked model constructor.
+     * @property {module:model/Locked}
+     */
+    Locked,
+
+    /**
      * The LockedCoin model constructor.
      * @property {module:model/LockedCoin}
      */
@@ -1140,6 +1295,12 @@ export {
     ParamChange,
 
     /**
+     * The PricePoint model constructor.
+     * @property {module:model/PricePoint}
+     */
+    PricePoint,
+
+    /**
      * The Proposer model constructor.
      * @property {module:model/Proposer}
      */
@@ -1168,6 +1329,12 @@ export {
      * @property {module:model/SigningInfo}
      */
     SigningInfo,
+
+    /**
+     * The Slash model constructor.
+     * @property {module:model/Slash}
+     */
+    Slash,
 
     /**
      * The StdTx model constructor.
@@ -1236,6 +1403,12 @@ export {
     TextProposalContentValue,
 
     /**
+     * The Tickers model constructor.
+     * @property {module:model/Tickers}
+     */
+    Tickers,
+
+    /**
      * The Token model constructor.
      * @property {module:model/Token}
      */
@@ -1246,6 +1419,18 @@ export {
      * @property {module:model/TokenValue}
      */
     TokenValue,
+
+    /**
+     * The TransferRecord model constructor.
+     * @property {module:model/TransferRecord}
+     */
+    TransferRecord,
+
+    /**
+     * The Tx model constructor.
+     * @property {module:model/Tx}
+     */
+    Tx,
 
     /**
      * The TxQuery model constructor.
@@ -1260,6 +1445,12 @@ export {
     TxQueryResult,
 
     /**
+     * The Unbonding model constructor.
+     * @property {module:model/Unbonding}
+     */
+    Unbonding,
+
+    /**
      * The UnbondingDelegationPair model constructor.
      * @property {module:model/UnbondingDelegationPair}
      */
@@ -1270,6 +1461,30 @@ export {
      * @property {module:model/UnbondingEntries}
      */
     UnbondingEntries,
+
+    /**
+     * The Unlock model constructor.
+     * @property {module:model/Unlock}
+     */
+    Unlock,
+
+    /**
+     * The UserOrder model constructor.
+     * @property {module:model/UserOrder}
+     */
+    UserOrder,
+
+    /**
+     * The UserOrderCancelOrderInfo model constructor.
+     * @property {module:model/UserOrderCancelOrderInfo}
+     */
+    UserOrderCancelOrderInfo,
+
+    /**
+     * The UserOrderCreateOrderInfo model constructor.
+     * @property {module:model/UserOrderCreateOrderInfo}
+     */
+    UserOrderCreateOrderInfo,
 
     /**
      * The Validator model constructor.
@@ -1332,6 +1547,12 @@ export {
     AuthApi,
 
     /**
+    * The BancorApi service constructor.
+    * @property {module:api/BancorApi}
+    */
+    BancorApi,
+
+    /**
     * The BancorliteApi service constructor.
     * @property {module:api/BancorliteApi}
     */
@@ -1356,6 +1577,12 @@ export {
     DistributionApi,
 
     /**
+    * The ExpiryApi service constructor.
+    * @property {module:api/ExpiryApi}
+    */
+    ExpiryApi,
+
+    /**
     * The GovernanceApi service constructor.
     * @property {module:api/GovernanceApi}
     */
@@ -1372,6 +1599,18 @@ export {
     * @property {module:api/MarketApi}
     */
     MarketApi,
+
+    /**
+    * The MiscApi service constructor.
+    * @property {module:api/MiscApi}
+    */
+    MiscApi,
+
+    /**
+    * The SlashApi service constructor.
+    * @property {module:api/SlashApi}
+    */
+    SlashApi,
 
     /**
     * The SlashingApi service constructor.
@@ -1395,5 +1634,11 @@ export {
     * The TransactionsApi service constructor.
     * @property {module:api/TransactionsApi}
     */
-    TransactionsApi
+    TransactionsApi,
+
+    /**
+    * The TxApi service constructor.
+    * @property {module:api/TxApi}
+    */
+    TxApi
 };

@@ -13,6 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
+import CandleStick from '../model/CandleStick';
 import InlineObject26 from '../model/InlineObject26';
 import InlineObject27 from '../model/InlineObject27';
 import InlineObject28 from '../model/InlineObject28';
@@ -22,8 +23,12 @@ import InlineResponse20044 from '../model/InlineResponse20044';
 import InlineResponse20045 from '../model/InlineResponse20045';
 import InlineResponse20046 from '../model/InlineResponse20046';
 import InlineResponse20047 from '../model/InlineResponse20047';
+import InlineResponse20055 from '../model/InlineResponse20055';
+import InlineResponse20056 from '../model/InlineResponse20056';
 import StdTx from '../model/StdTx';
+import Tickers from '../model/Tickers';
 import UNKNOWN_BASE_TYPE from '../model/UNKNOWN_BASE_TYPE';
+import UserOrder from '../model/UserOrder';
 
 /**
 * Market service.
@@ -546,6 +551,332 @@ export default class MarketApi {
      */
     modifyPricePrecision(info) {
       return this.modifyPricePrecisionWithHttpInfo(info)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Query market candleStick
+     * Query candleStick until to given time
+     * @param {String} market stock/money
+     * @param {String} timespan 1min/1hour/1day
+     * @param {Number} time Unix timestamp
+     * @param {Number} sid Sequence id
+     * @param {Number} count Querier candleStick count limited to 1024
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/CandleStick>} and HTTP response
+     */
+    queryCandleStickWithHttpInfo(market, timespan, time, sid, count) {
+      let postBody = null;
+      // verify the required parameter 'market' is set
+      if (market === undefined || market === null) {
+        throw new Error("Missing the required parameter 'market' when calling queryCandleStick");
+      }
+      // verify the required parameter 'timespan' is set
+      if (timespan === undefined || timespan === null) {
+        throw new Error("Missing the required parameter 'timespan' when calling queryCandleStick");
+      }
+      // verify the required parameter 'time' is set
+      if (time === undefined || time === null) {
+        throw new Error("Missing the required parameter 'time' when calling queryCandleStick");
+      }
+      // verify the required parameter 'sid' is set
+      if (sid === undefined || sid === null) {
+        throw new Error("Missing the required parameter 'sid' when calling queryCandleStick");
+      }
+      // verify the required parameter 'count' is set
+      if (count === undefined || count === null) {
+        throw new Error("Missing the required parameter 'count' when calling queryCandleStick");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'market': market,
+        'timespan': timespan,
+        'time': time,
+        'sid': sid,
+        'count': count
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [CandleStick];
+      return this.apiClient.callApi(
+        '/market/candle-sticks', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Query market candleStick
+     * Query candleStick until to given time
+     * @param {String} market stock/money
+     * @param {String} timespan 1min/1hour/1day
+     * @param {Number} time Unix timestamp
+     * @param {Number} sid Sequence id
+     * @param {Number} count Querier candleStick count limited to 1024
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/CandleStick>}
+     */
+    queryCandleStick(market, timespan, time, sid, count) {
+      return this.queryCandleStickWithHttpInfo(market, timespan, time, sid, count)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Query market deal
+     * Query market deal until to given time
+     * @param {String} market stock/money
+     * @param {Number} time Unix timestamp
+     * @param {Number} sid Sequence id
+     * @param {Number} count Querier deal count limited to 1024
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20056} and HTTP response
+     */
+    queryDealWithHttpInfo(market, time, sid, count) {
+      let postBody = null;
+      // verify the required parameter 'market' is set
+      if (market === undefined || market === null) {
+        throw new Error("Missing the required parameter 'market' when calling queryDeal");
+      }
+      // verify the required parameter 'time' is set
+      if (time === undefined || time === null) {
+        throw new Error("Missing the required parameter 'time' when calling queryDeal");
+      }
+      // verify the required parameter 'sid' is set
+      if (sid === undefined || sid === null) {
+        throw new Error("Missing the required parameter 'sid' when calling queryDeal");
+      }
+      // verify the required parameter 'count' is set
+      if (count === undefined || count === null) {
+        throw new Error("Missing the required parameter 'count' when calling queryDeal");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'market': market,
+        'time': time,
+        'sid': sid,
+        'count': count
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse20056;
+      return this.apiClient.callApi(
+        '/market/deals', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Query market deal
+     * Query market deal until to given time
+     * @param {String} market stock/money
+     * @param {Number} time Unix timestamp
+     * @param {Number} sid Sequence id
+     * @param {Number} count Querier deal count limited to 1024
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20056}
+     */
+    queryDeal(market, time, sid, count) {
+      return this.queryDealWithHttpInfo(market, time, sid, count)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Query market depth
+     * Query purchases and sales of a market at all price levels
+     * @param {String} market stock/money
+     * @param {Number} count Querier count limited to 1024
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20055} and HTTP response
+     */
+    queryDepthWithHttpInfo(market, count) {
+      let postBody = null;
+      // verify the required parameter 'market' is set
+      if (market === undefined || market === null) {
+        throw new Error("Missing the required parameter 'market' when calling queryDepth");
+      }
+      // verify the required parameter 'count' is set
+      if (count === undefined || count === null) {
+        throw new Error("Missing the required parameter 'count' when calling queryDepth");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'market': market,
+        'count': count
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse20055;
+      return this.apiClient.callApi(
+        '/market/depths', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Query market depth
+     * Query purchases and sales of a market at all price levels
+     * @param {String} market stock/money
+     * @param {Number} count Querier count limited to 1024
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20055}
+     */
+    queryDepth(market, count) {
+      return this.queryDepthWithHttpInfo(market, count)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Query account's order
+     * Query account's order activities in all markets until to given time
+     * @param {String} account Bech32 address
+     * @param {Number} time Unix timestamp
+     * @param {Number} sid Sequence id
+     * @param {Number} count Querier order count limited to 1024
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.token Symbol
+     * @param {String} opts.tag Filter responses type by tag string create/fill/cancel
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserOrder} and HTTP response
+     */
+    queryOrderWithHttpInfo(account, time, sid, count, opts) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'account' is set
+      if (account === undefined || account === null) {
+        throw new Error("Missing the required parameter 'account' when calling queryOrder");
+      }
+      // verify the required parameter 'time' is set
+      if (time === undefined || time === null) {
+        throw new Error("Missing the required parameter 'time' when calling queryOrder");
+      }
+      // verify the required parameter 'sid' is set
+      if (sid === undefined || sid === null) {
+        throw new Error("Missing the required parameter 'sid' when calling queryOrder");
+      }
+      // verify the required parameter 'count' is set
+      if (count === undefined || count === null) {
+        throw new Error("Missing the required parameter 'count' when calling queryOrder");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'account': account,
+        'time': time,
+        'sid': sid,
+        'count': count,
+        'token': opts['token'],
+        'tag': opts['tag']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = UserOrder;
+      return this.apiClient.callApi(
+        '/market/user-orders', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Query account's order
+     * Query account's order activities in all markets until to given time
+     * @param {String} account Bech32 address
+     * @param {Number} time Unix timestamp
+     * @param {Number} sid Sequence id
+     * @param {Number} count Querier order count limited to 1024
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.token Symbol
+     * @param {String} opts.tag Filter responses type by tag string create/fill/cancel
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserOrder}
+     */
+    queryOrder(account, time, sid, count, opts) {
+      return this.queryOrderWithHttpInfo(account, time, sid, count, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Query market tickers
+     * Query tickers info
+     * @param {Array.<String>} marketList Market count limited to 1~100
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Tickers>} and HTTP response
+     */
+    queryTickersWithHttpInfo(marketList) {
+      let postBody = null;
+      // verify the required parameter 'marketList' is set
+      if (marketList === undefined || marketList === null) {
+        throw new Error("Missing the required parameter 'marketList' when calling queryTickers");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'market_list': this.apiClient.buildCollectionParam(marketList, 'csv')
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Tickers];
+      return this.apiClient.callApi(
+        '/market/tickers', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Query market tickers
+     * Query tickers info
+     * @param {Array.<String>} marketList Market count limited to 1~100
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Tickers>}
+     */
+    queryTickers(marketList) {
+      return this.queryTickersWithHttpInfo(marketList)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -15,6 +15,11 @@ Method | HTTP request | Description
 [**getOrdersInMarket**](MarketApi.md#getOrdersInMarket) | **GET** /market/orderbook/{stock}/{money} | Query trading-pair&#39;s orderbook
 [**getTradingPair**](MarketApi.md#getTradingPair) | **GET** /market/trading-pairs/{stock}/{money} | Query trading-pair info
 [**modifyPricePrecision**](MarketApi.md#modifyPricePrecision) | **POST** /market/price-precision | Modify the price precision of the trading pair in the dex
+[**queryCandleStick**](MarketApi.md#queryCandleStick) | **GET** /market/candle-sticks | Query market candleStick
+[**queryDeal**](MarketApi.md#queryDeal) | **GET** /market/deals | Query market deal
+[**queryDepth**](MarketApi.md#queryDepth) | **GET** /market/depths | Query market depth
+[**queryOrder**](MarketApi.md#queryOrder) | **GET** /market/user-orders | Query account&#39;s order
+[**queryTickers**](MarketApi.md#queryTickers) | **GET** /market/tickers | Query market tickers
 [**queryTradingPairs**](MarketApi.md#queryTradingPairs) | **GET** /market/exist-trading-pairs | Query all trading-pair infos in blockchain
 
 
@@ -478,6 +483,254 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## queryCandleStick
+
+> [CandleStick] queryCandleStick(market, timespan, time, sid, count)
+
+Query market candleStick
+
+Query candleStick until to given time
+
+### Example
+
+```javascript
+import DexApiNodejs from 'dex-api-nodejs';
+
+let apiInstance = new DexApiNodejs.MarketApi();
+let market = "market_example"; // String | stock/money
+let timespan = "timespan_example"; // String | 1min/1hour/1day
+let time = 789; // Number | Unix timestamp
+let sid = 789; // Number | Sequence id
+let count = 56; // Number | Querier candleStick count limited to 1024
+apiInstance.queryCandleStick(market, timespan, time, sid, count).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **market** | **String**| stock/money | 
+ **timespan** | **String**| 1min/1hour/1day | 
+ **time** | **Number**| Unix timestamp | 
+ **sid** | **Number**| Sequence id | 
+ **count** | **Number**| Querier candleStick count limited to 1024 | 
+
+### Return type
+
+[**[CandleStick]**](CandleStick.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## queryDeal
+
+> InlineResponse20056 queryDeal(market, time, sid, count)
+
+Query market deal
+
+Query market deal until to given time
+
+### Example
+
+```javascript
+import DexApiNodejs from 'dex-api-nodejs';
+
+let apiInstance = new DexApiNodejs.MarketApi();
+let market = "market_example"; // String | stock/money
+let time = 789; // Number | Unix timestamp
+let sid = 789; // Number | Sequence id
+let count = 56; // Number | Querier deal count limited to 1024
+apiInstance.queryDeal(market, time, sid, count).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **market** | **String**| stock/money | 
+ **time** | **Number**| Unix timestamp | 
+ **sid** | **Number**| Sequence id | 
+ **count** | **Number**| Querier deal count limited to 1024 | 
+
+### Return type
+
+[**InlineResponse20056**](InlineResponse20056.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## queryDepth
+
+> InlineResponse20055 queryDepth(market, count)
+
+Query market depth
+
+Query purchases and sales of a market at all price levels
+
+### Example
+
+```javascript
+import DexApiNodejs from 'dex-api-nodejs';
+
+let apiInstance = new DexApiNodejs.MarketApi();
+let market = "market_example"; // String | stock/money
+let count = 56; // Number | Querier count limited to 1024
+apiInstance.queryDepth(market, count).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **market** | **String**| stock/money | 
+ **count** | **Number**| Querier count limited to 1024 | 
+
+### Return type
+
+[**InlineResponse20055**](InlineResponse20055.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## queryOrder
+
+> UserOrder queryOrder(account, time, sid, count, opts)
+
+Query account&#39;s order
+
+Query account&#39;s order activities in all markets until to given time
+
+### Example
+
+```javascript
+import DexApiNodejs from 'dex-api-nodejs';
+
+let apiInstance = new DexApiNodejs.MarketApi();
+let account = "account_example"; // String | Bech32 address
+let time = 789; // Number | Unix timestamp
+let sid = 789; // Number | Sequence id
+let count = 56; // Number | Querier order count limited to 1024
+let opts = {
+  'token': "token_example", // String | Symbol
+  'tag': "tag_example" // String | Filter responses type by tag string create/fill/cancel
+};
+apiInstance.queryOrder(account, time, sid, count, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **account** | **String**| Bech32 address | 
+ **time** | **Number**| Unix timestamp | 
+ **sid** | **Number**| Sequence id | 
+ **count** | **Number**| Querier order count limited to 1024 | 
+ **token** | **String**| Symbol | [optional] 
+ **tag** | **String**| Filter responses type by tag string create/fill/cancel | [optional] 
+
+### Return type
+
+[**UserOrder**](UserOrder.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## queryTickers
+
+> [Tickers] queryTickers(marketList)
+
+Query market tickers
+
+Query tickers info
+
+### Example
+
+```javascript
+import DexApiNodejs from 'dex-api-nodejs';
+
+let apiInstance = new DexApiNodejs.MarketApi();
+let marketList = ["null"]; // [String] | Market count limited to 1~100
+apiInstance.queryTickers(marketList).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **marketList** | [**[String]**](String.md)| Market count limited to 1~100 | 
+
+### Return type
+
+[**[Tickers]**](Tickers.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
